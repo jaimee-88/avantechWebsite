@@ -1,1 +1,10 @@
 avantech-site.zip
+/.vscode/
+node_modules/
+dist/
+build/
+.env
+.DS_Store
+Thumbs.db
+/.cache/
+*.log
