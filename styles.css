@@ -21,7 +21,7 @@
   --inverter-image: url("assets/generated/solar-inverter-wall.png");
   --business-image: url("assets/photos/buildings/blue-business-towers.jpg");
   --support-image: url("assets/generated/security-control-room.png");
-  --contact-hero-image: url("assets/photos/contact/contact-keyboard.jpg");
+  --contact-hero-image: url("assets/photos/contact/contact-keyboard-wide.jpg");
 }
 
 * {
@@ -1172,6 +1172,289 @@ h3,
   padding-bottom: 38px;
 }
 
+/* Solar solutions page */
+.solar-page {
+  background: var(--paper);
+}
+
+.solar-hero {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  padding: 90px 96px 52px;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 0.68), rgb(0 0 0 / 0.34) 48%, rgb(0 0 0 / 0.12)),
+    url("assets/generated/solar-home-system.png") center 46% / cover;
+}
+
+.back-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  margin-top: 8px;
+  color: var(--white);
+  font-size: 13px;
+}
+
+.solar-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin-top: 76px;
+  text-shadow: 1px 2px 5px rgb(0 0 0 / 0.32);
+}
+
+.solar-hero-copy h1 {
+  color: var(--white);
+  font-size: clamp(38px, 4vw, 52px);
+  line-height: 1.07;
+}
+
+.solar-hero-copy p {
+  max-width: 460px;
+  margin: 10px 0 18px;
+  color: var(--white);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.energy-setup,
+.why-solar {
+  padding: 42px 96px 0;
+  background: var(--paper);
+}
+
+.section-heading h2 {
+  color: var(--teal);
+  font-size: clamp(32px, 3vw, 40px);
+  line-height: 1.05;
+}
+
+.section-heading p {
+  max-width: 760px;
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.setup-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.setup-card {
+  position: relative;
+  min-height: 230px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 13px;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 17px 26px rgb(12 62 69 / 0.24);
+}
+
+.setup-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgb(5 65 72 / 0.98) 72%);
+}
+
+.setup-card > div {
+  position: relative;
+  z-index: 1;
+  padding: 16px 18px;
+  color: var(--white);
+}
+
+.setup-card h3 {
+  color: var(--green);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.setup-card p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.setup-grid {
+  background-image: url("assets/photos/solar/solar-panels-sunset.jpg");
+}
+
+.setup-hybrid {
+  background-image: url("assets/generated/solar-home-system.png");
+}
+
+.setup-offgrid {
+  background-image: url("assets/photos/solar/solar-rooftop-system.jpg");
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 22px;
+  padding-bottom: 46px;
+}
+
+.why-grid h3 {
+  color: var(--teal);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.why-grid p {
+  margin: 5px 0 0;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.solar-install-types {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.31fr) minmax(0, 0.69fr);
+  gap: 34px;
+  align-items: center;
+  padding: 64px 96px 66px;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--teal);
+}
+
+.solar-install-types::before,
+.solar-install-types::after {
+  content: "";
+  position: absolute;
+  width: 560px;
+  height: 440px;
+  background: url("assets/patterns/wavy-line-large.png") center / contain no-repeat;
+  filter: brightness(0) invert(1);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.solar-install-types::before {
+  left: -285px;
+  bottom: -135px;
+  transform: rotate(115deg);
+}
+
+.solar-install-types::after {
+  right: -250px;
+  top: -120px;
+  transform: rotate(-55deg);
+}
+
+.solar-install-copy,
+.install-gallery {
+  position: relative;
+  z-index: 1;
+}
+
+.solar-install-copy h2 {
+  max-width: 260px;
+  color: var(--white);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.08;
+}
+
+.solar-install-copy p {
+  max-width: 240px;
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.install-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.install-card {
+  position: relative;
+  min-height: 210px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background-position: center;
+  background-size: cover;
+}
+
+.install-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 52%, rgb(0 0 0 / 0.72));
+}
+
+.install-card figcaption {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  color: var(--white);
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.install-deck {
+  min-height: 275px;
+}
+
+.install-roof {
+  background-image: url("assets/photos/solar/solar-rooftop-system.jpg");
+}
+
+.install-ground {
+  background-image: url("assets/photos/solar/commercial-rooftop-solar.jpg");
+}
+
+.install-deck {
+  background-image: url("assets/photos/solar/solar-pv-array.jpg");
+}
+
+.install-floating {
+  background-image: url("assets/photos/solar/solar-farm-wide.jpg");
+}
+
+.solar-brand-strip {
+  min-height: 122px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(38px, 6vw, 86px);
+  padding: 32px 24px;
+  overflow: hidden;
+  background: var(--paper);
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: clamp(22px, 2.35vw, 34px);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.brand-red {
+  color: #e5252a;
+}
+
+.brand-orange {
+  color: #f6a400;
+}
+
+.brand-blue {
+  color: #0472c9;
+}
+
 /* Contact page */
 .contact-page {
   background: var(--paper);
@@ -1179,14 +1462,14 @@ h3,
 
 .contact-hero {
   position: relative;
-  min-height: 486px;
+  min-height: clamp(420px, 31vw, 486px);
   overflow: hidden;
-  padding: 40px 100px 54px;
+  padding: 40px clamp(64px, 7vw, 100px) 54px;
   color: var(--white);
   background:
-    linear-gradient(90deg, rgb(25 33 20 / 0.54), rgb(30 39 24 / 0.28)),
+    linear-gradient(90deg, rgb(25 33 20 / 0.6), rgb(30 39 24 / 0.32)),
     linear-gradient(180deg, rgb(7 26 28 / 0.1), rgb(7 26 28 / 0.24)),
-    var(--contact-hero-image) center 52% / cover;
+    var(--contact-hero-image) center 46% / cover;
 }
 
 .contact-hero::before {
@@ -1201,13 +1484,13 @@ h3,
   position: relative;
   z-index: 1;
   max-width: 640px;
-  padding-top: 140px;
+  padding-top: clamp(118px, 9vw, 142px);
 }
 
 .contact-hero h1 {
   max-width: 575px;
   color: var(--white);
-  font-size: clamp(46px, 4.8vw, 58px);
+  font-size: clamp(42px, 3.9vw, 58px);
   line-height: 1.1;
   text-shadow: 1px 2px 5px rgb(0 0 0 / 0.28);
 }
@@ -1222,21 +1505,23 @@ h3,
 
 .contact-info-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 410px));
-  gap: 34px 40px;
+  grid-template-columns: repeat(2, minmax(340px, 500px));
+  gap: 42px clamp(42px, 4vw, 72px);
   justify-content: center;
-  padding: 64px 64px 72px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 74px 64px 84px;
   background: var(--paper);
 }
 
 .contact-info-card {
   display: grid;
-  grid-template-columns: 70px minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 26px;
   align-items: center;
-  min-height: 168px;
-  padding: 24px 28px;
-  border-radius: 16px;
+  min-height: 190px;
+  padding: 32px 38px;
+  border-radius: 18px;
   background: #ffffff;
   box-shadow: 0 24px 60px rgb(12 62 69 / 0.08);
 }
@@ -1244,14 +1529,14 @@ h3,
 .contact-info-card-wide {
   grid-column: 1 / -1;
   justify-self: center;
-  width: min(100%, 410px);
+  width: min(100%, 500px);
 }
 
 .contact-card-icon {
   position: relative;
   display: grid;
-  width: 64px;
-  height: 64px;
+  width: 70px;
+  height: 70px;
   place-items: center;
   border-radius: 50%;
   background: var(--teal);
@@ -1260,36 +1545,36 @@ h3,
 }
 
 .contact-card-icon::before {
-  color: var(--white);
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1;
+  content: "";
+  width: 34px;
+  height: 34px;
+  background: var(--white);
+  mask: var(--contact-icon) center / contain no-repeat;
+  -webkit-mask: var(--contact-icon) center / contain no-repeat;
 }
 
-.contact-card-phone::before {
-  content: "☎";
+.contact-card-phone {
+  --contact-icon: url("assets/icons/contact/phone-call.svg");
 }
 
-.contact-card-mail::before {
-  content: "✉";
-  font-size: 30px;
+.contact-card-mail {
+  --contact-icon: url("assets/icons/contact/email-envelope.svg");
 }
 
-.contact-card-clock::before {
-  content: "◷";
+.contact-card-clock {
+  --contact-icon: url("assets/icons/contact/clock.svg");
 }
 
 .contact-info-card h2 {
   color: var(--teal);
-  font-size: 24px;
+  font-size: clamp(24px, 1.9vw, 30px);
   line-height: 1.2;
 }
 
 .contact-highlight {
-  margin: 20px 0 8px;
+  margin: 14px 0 9px;
   color: var(--teal);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.28;
 }
@@ -1297,7 +1582,7 @@ h3,
 .contact-info-card p {
   margin: 0;
   color: var(--ink);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.4;
 }
 
@@ -1319,23 +1604,21 @@ h3,
 
 .contact-address-icon {
   position: relative;
-  width: 64px;
-  height: 64px;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
   border-radius: 50%;
   background: var(--teal);
 }
 
 .contact-address-icon::before {
   content: "";
-  position: absolute;
-  top: 16px;
-  left: 20px;
-  width: 24px;
-  height: 33px;
-  border-radius: 50%;
-  background: var(--teal);
-  border: 4px solid var(--white);
-  clip-path: path("M12 0C5.4 0 0 5.3 0 12c0 8.8 12 21 12 21s12-12.2 12-21C24 5.3 18.6 0 12 0ZM12 16.3A4.3 4.3 0 1 1 12 7.7a4.3 4.3 0 0 1 0 8.6Z");
+  width: 30px;
+  height: 30px;
+  background: var(--white);
+  mask: url("assets/icons/contact/map-pin.svg") center / contain no-repeat;
+  -webkit-mask: url("assets/icons/contact/map-pin.svg") center / contain no-repeat;
 }
 
 .contact-address-copy h2 {
@@ -1611,30 +1894,13 @@ h3,
 }
 
 .help-illustration {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  color: var(--teal);
+  width: 118px;
 }
 
-.help-screen {
-  display: grid;
-  width: 62px;
-  height: 52px;
-  place-items: center;
-  border: 2px solid var(--teal);
-  font-size: 34px;
-}
-
-.help-person {
-  display: grid;
-  width: 32px;
-  height: 60px;
-  place-items: center;
-  border: 2px solid var(--teal);
-  border-radius: 50% 50% 35% 35%;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 20px;
+.help-illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .help-copy h2 {
@@ -1887,15 +2153,16 @@ h3,
 
 @media (max-width: 1024px) {
   .navbar {
-    height: 80px;
+    height: 73px;
     align-items: center;
-    border-color: rgb(255 255 255 / 0.28);
+    border-color: rgb(255 255 255 / 0.42);
     border-radius: 999px;
     flex-direction: row;
     flex-wrap: nowrap;
-    background: rgb(42 42 42 / 0.94);
-    box-shadow: 0 8px 28px rgb(0 0 0 / 0.2);
-    backdrop-filter: blur(18px);
+    gap: 18px;
+    background: rgb(255 255 255 / 0.18);
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.25);
+    backdrop-filter: blur(16px);
   }
 
   .hamburger {
@@ -1935,20 +2202,22 @@ h3,
 
   .nav-menu {
     display: none;
-    position: fixed;
-    z-index: -1;
-    top: 0;
+    position: absolute;
+    z-index: 4;
+    top: calc(100% + 12px);
     left: 0;
     right: 0;
-    width: 100vw;
-    height: 100dvh;
-    padding: 145px 24px 48px;
+    width: 100%;
+    max-height: calc(100dvh - 125px);
+    padding: 18px;
     overflow-y: auto;
     flex-direction: column;
-    align-items: center;
-    gap: 0;
-    background: linear-gradient(to bottom, transparent 0 112px, var(--white) 112px);
-    box-shadow: none;
+    align-items: stretch;
+    gap: 8px;
+    border: 1px solid rgb(12 62 69 / 0.08);
+    border-radius: 28px;
+    background: var(--white);
+    box-shadow: 0 18px 42px rgb(0 0 0 / 0.14);
   }
 
   .nav-toggle:checked ~ .nav-menu {
@@ -1956,24 +2225,25 @@ h3,
   }
 
   .nav-links {
-    width: min(100%, 420px);
+    width: 100%;
     flex-direction: column;
-    align-items: center;
-    gap: 0;
+    align-items: stretch;
+    gap: 8px;
     color: var(--ink);
   }
 
   .nav-links a {
     display: flex;
     width: 100%;
-    min-height: 76px;
+    min-height: 48px;
     align-items: center;
     justify-content: center;
-    padding: 18px 20px;
-    border-radius: 0;
-    font-size: 21px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 16px;
     font-weight: 600;
     text-align: center;
+    background: transparent;
   }
 
   .nav-links a:hover {
@@ -1982,19 +2252,16 @@ h3,
 
   .contact-pill {
     width: 100%;
-    min-height: 76px;
+    min-height: 48px;
     margin-top: 0;
     color: var(--ink);
-    background: transparent;
-    box-shadow: none;
+    color: var(--white);
+    background: linear-gradient(90deg, var(--button-a), var(--button-b));
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.14);
   }
 
   .nav-links .active::after {
     display: none;
-  }
-
-  body:has(.nav-toggle:checked) {
-    overflow: hidden;
   }
 
   .timeline {
@@ -2048,6 +2315,51 @@ h3,
 
   .contact-map {
     min-height: 390px;
+  }
+
+  .solar-hero {
+    min-height: 440px;
+    padding-right: 64px;
+    padding-left: 64px;
+    background-position: 54% center;
+  }
+
+  .solar-hero-copy {
+    margin-top: 86px;
+  }
+
+  .energy-setup,
+  .why-solar {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  .setup-card {
+    min-height: 190px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solar-install-types {
+    grid-template-columns: minmax(176px, 0.34fr) minmax(0, 0.66fr);
+    gap: 24px;
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  .install-card {
+    min-height: 166px;
+  }
+
+  .install-deck {
+    min-height: 210px;
+  }
+
+  .solar-brand-strip {
+    justify-content: flex-start;
+    overflow-x: auto;
   }
 
   .service-cards-section {
@@ -2321,11 +2633,8 @@ h3,
   }
 
   .contact-card-icon::before {
-    font-size: 24px;
-  }
-
-  .contact-card-mail::before {
-    font-size: 22px;
+    width: 22px;
+    height: 22px;
   }
 
   .contact-info-card h2 {
@@ -2359,11 +2668,8 @@ h3,
   }
 
   .contact-address-icon::before {
-    top: 11px;
-    left: 14px;
-    width: 18px;
-    height: 25px;
-    border-width: 3px;
+    width: 23px;
+    height: 23px;
   }
 
   .contact-address-copy h2 {
@@ -2380,6 +2686,129 @@ h3,
 
   .contact-map {
     min-height: 184px;
+  }
+
+  .solar-hero {
+    min-height: 318px;
+    padding: 104px 22px 34px;
+    background-position: 48% top;
+  }
+
+  .back-link {
+    margin-top: 0;
+    font-size: 9px;
+  }
+
+  .solar-hero-copy {
+    max-width: 270px;
+    margin-top: 28px;
+  }
+
+  .solar-hero-copy h1 {
+    font-size: clamp(28px, 8.4vw, 38px);
+    line-height: 1.05;
+  }
+
+  .solar-hero-copy p {
+    max-width: 250px;
+    margin: 5px 0 10px;
+    font-size: 8px;
+    line-height: 1.35;
+  }
+
+  .solar-hero-copy .button {
+    min-height: 31px;
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: 8px;
+  }
+
+  .energy-setup,
+  .why-solar {
+    padding: 28px 22px 0;
+  }
+
+  .section-heading h2 {
+    font-size: 22px;
+  }
+
+  .section-heading p {
+    font-size: 9px;
+  }
+
+  .setup-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 14px;
+  }
+
+  .setup-card {
+    min-height: 168px;
+  }
+
+  .setup-card h3 {
+    font-size: 14px;
+  }
+
+  .setup-card p {
+    font-size: 9px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+    padding-bottom: 28px;
+  }
+
+  .why-grid h3 {
+    font-size: 9px;
+  }
+
+  .why-grid p {
+    font-size: 8px;
+  }
+
+  .solar-install-types {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px 22px 28px;
+  }
+
+  .solar-install-copy h2 {
+    max-width: 220px;
+    font-size: 20px;
+  }
+
+  .solar-install-copy p {
+    max-width: 240px;
+    margin-top: 6px;
+    font-size: 9px;
+  }
+
+  .install-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .install-card {
+    min-height: 116px;
+  }
+
+  .install-deck {
+    min-height: 116px;
+  }
+
+  .install-card figcaption {
+    font-size: 8px;
+  }
+
+  .solar-brand-strip {
+    min-height: 82px;
+    justify-content: flex-start;
+    gap: 42px;
+    overflow-x: auto;
+    padding: 20px 22px;
+    font-size: 22px;
   }
 
   .help-copy p br {
@@ -2524,32 +2953,32 @@ h3,
 
   .footer {
     min-height: 0;
-    padding: 40px clamp(32px, 18vw, 118px) 66px;
+    padding: 32px 28px 42px;
   }
 
   .footer-inner {
     display: block;
-    max-width: 410px;
+    max-width: 330px;
     margin: 0 auto;
   }
 
   .footer a,
   .footer p {
-    font-size: 24px;
-    line-height: 1.28;
+    font-size: 16px;
+    line-height: 1.32;
   }
 
   .footer h2,
   .footer h3 {
-    margin-bottom: 8px;
-    font-size: 24px;
+    margin-bottom: 10px;
+    font-size: 18px;
     line-height: 1.15;
   }
 
   .footer .footer-link {
     width: 100%;
-    max-width: 350px;
-    margin-bottom: 16px;
+    max-width: 285px;
+    margin-bottom: 10px;
   }
 
   .footer .footer-link-text {
@@ -2564,37 +2993,37 @@ h3,
   }
 
   .footer-inner > div:nth-child(3) {
-    margin-top: 62px;
+    margin-top: 34px;
   }
 
   .contact-line {
-    gap: 10px;
-    margin-bottom: 8px;
+    gap: 8px;
+    margin-bottom: 7px;
   }
 
   .contact-icon {
-    flex-basis: 34px;
-    width: 34px;
-    height: 34px;
+    flex-basis: 20px;
+    width: 20px;
+    height: 20px;
     margin-top: 0;
   }
 
   .mail-icon::before {
-    inset: 7px 4px auto;
-    height: 17px;
+    inset: 4px 2px auto;
+    height: 10px;
   }
 
   .footer h3 {
-    margin-top: 26px;
+    margin-top: 18px;
   }
 
   .socials {
-    gap: 14px;
+    gap: 10px;
   }
 
   .socials a {
-    width: 44px;
-    height: 44px;
+    width: 32px;
+    height: 32px;
     border: 0;
     background: var(--white);
   }
@@ -2604,19 +3033,19 @@ h3,
   }
 
   .facebook::before {
-    font-size: 30px;
+    font-size: 22px;
   }
 
   .tiktok::before {
-    font-size: 29px;
+    font-size: 20px;
   }
 
   .youtube {
-    width: 50px;
-    border-radius: 11px;
+    width: 38px;
+    border-radius: 9px;
   }
 
   .youtube::before {
-    font-size: 17px;
+    font-size: 13px;
   }
 }
