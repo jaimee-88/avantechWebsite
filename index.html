@@ -15,17 +15,11 @@
   <body>
     <main class="page-shell">
       <section class="hero" id="home">
-        <div class="hero-slideshow" aria-hidden="true">
-          <div class="hero-slide hero-slide-1"></div>
-          <div class="hero-slide hero-slide-2"></div>
-          <div class="hero-slide hero-slide-3"></div>
-          <div class="hero-slide hero-slide-4"></div>
-        </div>
         <nav class="navbar" aria-label="Primary navigation">
           <a class="brand" href="#home" aria-label="AvanTech home">
             <img src="assets/brand/avantech-horizontal-white.png" alt="AvanTech Integrated Technology Solutions, Inc." />
           </a>
-          <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu" checked />
+          <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu" />
           <label class="hamburger" for="nav-toggle" aria-hidden="true">
             <span></span>
             <span></span>
@@ -40,7 +34,8 @@
             <div class="nav-links nav-right">
               <a href="partner.html">Partner With Us</a>
               <a href="#faqs">FAQs</a>
-              <a class="contact-pill" href="contact.html">Contact Us</a>
+              <a href="contact.html">Contact Us</a>
+              <a class="contact-pill" href="#quote">Free Quote</a>
             </div>
           </div>
         </nav>
@@ -81,56 +76,43 @@
           <article>
             <span class="year">2023</span>
             <h3>Founded</h3>
-            <p>
-              AvanTech began with a practical mission: make modern infrastructure smarter,
-              safer, and more sustainable for every client.
-            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </article>
           <article>
             <span class="year">2024</span>
             <h3>Expanded</h3>
-            <p>
-              The company widened its integrated services across solar, HVAC, and security
-              solutions for homes and businesses.
-            </p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </article>
           <article>
             <span class="year">2025+</span>
             <h3>Advancing</h3>
-            <p>
-              AvanTech continues to build future-ready spaces through reliable technology,
-              responsive service, and long-term partnerships.
-            </p>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </article>
         </div>
       </section>
 
       <section class="partners" aria-label="Partnered products">
         <div class="partner-track">
-          <span class="logo-green"><b>SunPro</b></span>
-          <span class="logo-blue"><b>SERAPHIM</b></span>
-          <span><b>SolaX</b></span>
-          <span class="logo-green"><b>DEYE</b></span>
-          <span class="partner-wide logo-sunova"><b>SUNOVA SOLAR</b></span>
-          <span class="logo-green"><b>Solis</b></span>
-          <span class="logo-red"><b>HUAWEI</b></span>
-          <span class="logo-blue"><b>JA SOLAR</b></span>
-          <span class="logo-blue"><b>TRINA SOLAR</b></span>
-          <span><b>Afore</b></span>
-          <span class="logo-green"><b>HANERSUN</b></span>
-          <span class="logo-blue"><b>LuxPowerTek</b></span>
-          <span class="logo-green"><b>SunPro</b></span>
-          <span class="logo-blue"><b>SERAPHIM</b></span>
-          <span><b>SolaX</b></span>
-          <span class="logo-green"><b>DEYE</b></span>
-          <span class="partner-wide logo-sunova"><b>SUNOVA SOLAR</b></span>
-          <span class="logo-green"><b>Solis</b></span>
-          <span class="logo-red"><b>HUAWEI</b></span>
-          <span class="logo-blue"><b>JA SOLAR</b></span>
-          <span class="logo-blue"><b>TRINA SOLAR</b></span>
-          <span><b>Afore</b></span>
-          <span class="logo-green"><b>HANERSUN</b></span>
-          <span class="logo-blue"><b>LuxPowerTek</b></span>
+          <span><img src="assets/partners/seraphim.png" alt="SERAPHIM" /></span>
+          <span><img src="assets/partners/solax.png" alt="SolaX Power" /></span>
+          <span><img src="assets/partners/deye.png" alt="Deye" /></span>
+          <span><img src="assets/partners/sunova.png" alt="Sunova Solar" /></span>
+          <span><img src="assets/partners/solis.png" alt="Solis" /></span>
+          <span><img src="assets/partners/sunpro.png" alt="SunPro" /></span>
+          <span><img src="assets/partners/huawei.png" alt="Huawei" /></span>
+          <span><img src="assets/partners/ja-solar.png" alt="JA Solar" /></span>
+          <span><img src="assets/partners/trina.png" alt="Trina Solar" /></span>
+          <span><img src="assets/partners/luxpowertek.png" alt="LuxPowerTek" /></span>
+          <span><img src="assets/partners/seraphim.png" alt="" /></span>
+          <span><img src="assets/partners/solax.png" alt="" /></span>
+          <span><img src="assets/partners/deye.png" alt="" /></span>
+          <span><img src="assets/partners/sunova.png" alt="" /></span>
+          <span><img src="assets/partners/solis.png" alt="" /></span>
+          <span><img src="assets/partners/sunpro.png" alt="" /></span>
+          <span><img src="assets/partners/huawei.png" alt="" /></span>
+          <span><img src="assets/partners/ja-solar.png" alt="" /></span>
+          <span><img src="assets/partners/trina.png" alt="" /></span>
+          <span><img src="assets/partners/luxpowertek.png" alt="" /></span>
         </div>
       </section>
 
@@ -141,9 +123,29 @@
         <a class="button" href="contact.html">Partner With Us <span aria-hidden="true">›</span></a>
       </section>
 
-      <footer class="footer" id="contact">
+      <footer class="footer home-footer" id="contact">
         <div class="footer-wave footer-wave-left"></div>
         <div class="footer-wave footer-wave-right"></div>
+        <section class="footer-solutions" aria-label="Complete integrated solutions">
+          <h2>Complete Integrated Solutions</h2>
+          <div class="footer-solutions-grid">
+            <article>
+              <h3>Solar Solutions</h3>
+              <p>High-performance solar panels, inverters, and systems for residential, commercial, and industrial applications.</p>
+              <a href="solar-solutions.html">View More <span aria-hidden="true">›</span></a>
+            </article>
+            <article>
+              <h3>HVAC Solutions</h3>
+              <p>Energy-efficient heating, ventilation, and air conditioning systems tailored for comfort, quality, and optimal performance.</p>
+              <a href="services.html#hvac">View More <span aria-hidden="true">›</span></a>
+            </article>
+            <article>
+              <h3>Security Solutions</h3>
+              <p>Advanced security systems including CCTV, access control, alarm systems, and integrated monitoring solutions.</p>
+              <a href="services.html#security">View More <span aria-hidden="true">›</span></a>
+            </article>
+          </div>
+        </section>
         <div class="footer-inner">
           <div>
             <h2>Quick Links</h2>
@@ -165,7 +167,7 @@
             <h2>Contacts</h2>
             <p class="contact-line">
               <span class="contact-icon mail-icon" aria-hidden="true"></span>
-              <span>sales.avantech@gmail.com</span>
+              <span>sales.avantechph@gmail.com</span>
             </p>
             <p class="contact-line">
               <span class="contact-icon location-icon" aria-hidden="true"></span>
