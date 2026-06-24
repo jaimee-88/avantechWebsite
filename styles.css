@@ -7,14 +7,21 @@
   --button-a: #79a602;
   --button-b: #8aad2d;
   --white: #ffffff;
-  --hero-image: url("assets/hero-default.png");
-  --hero-image-2: url("assets/hero-variant2.png");
-  --hero-image-3: url("assets/hero-variant3.png");
-  --hero-image-4: url("assets/hero-variant4.png");
-  --building-image: url("assets/hero-variant2.png");
-  --office-image: url("assets/hero-variant3.png");
-  --install-image: url("assets/hero-variant4.png");
-  --cta-image: url("assets/hero-default.png");
+  --hero-image: url("assets/photos/buildings/modern-business-district.jpg");
+  --hero-image-2: url("assets/photos/solar/solar-field-mountain.jpg");
+  --hero-image-3: url("assets/generated/solar-team-blueprint.png");
+  --hero-image-4: url("assets/generated/solar-inverter-equipment.png");
+  --building-image: url("assets/photos/solar/commercial-rooftop-solar.jpg");
+  --office-image: url("assets/photos/buildings/city-glass-towers.jpg");
+  --install-image: url("assets/photos/solar/solar-electrician-panel.jpg");
+  --cta-image: url("assets/photos/solar/solar-panels-closeup.jpg");
+  --solar-image: url("assets/photos/solar/solar-field-mountain.jpg");
+  --hvac-image: url("assets/photos/hvac/hvac-ductwork.jpg");
+  --security-image: url("assets/photos/security/security-camera-building.jpg");
+  --inverter-image: url("assets/generated/solar-inverter-wall.png");
+  --business-image: url("assets/photos/buildings/blue-business-towers.jpg");
+  --support-image: url("assets/generated/security-control-room.png");
+  --contact-hero-image: url("assets/photos/contact/contact-keyboard-wide.jpg");
 }
 
 * {
@@ -391,7 +398,7 @@ h3,
 .wave {
   width: 560px;
   height: 440px;
-  background: url("assets/wavy-line.png") center / contain no-repeat;
+  background: url("assets/patterns/wavy-line-large.png") center / contain no-repeat;
   filter: brightness(0) invert(1);
   opacity: 0.2;
 }
@@ -399,7 +406,7 @@ h3,
 .footer-wave {
   width: 560px;
   height: 440px;
-  background: url("assets/wavy-line.png") center / contain no-repeat;
+  background: url("assets/patterns/wavy-line-large.png") center / contain no-repeat;
   filter: brightness(0) invert(1);
   opacity: 0.2;
 }
@@ -495,16 +502,14 @@ h3,
 }
 
 .partner-footer-banner {
-  font: inherit;
-}
-
+  position: relative;
+  display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.72fr);
-  width: 300px;
-}
   min-height: 198px;
   margin-bottom: 34px;
   padding: 50px 40px 38px 56px;
   overflow: hidden;
+  color: var(--white);
   background:
     linear-gradient(180deg, rgb(21 61 69 / 0.72), rgb(15 58 66 / 0.72)),
     linear-gradient(90deg, rgb(117 138 148 / 0.52), rgb(77 96 109 / 0.52) 48%, rgb(40 58 70 / 0.52)),
@@ -555,35 +560,67 @@ h3,
   z-index: 1;
   align-items: end;
 }
+
+@keyframes slide-partners {
+  from {
+    transform: translateX(0);
   }
+
   to {
     transform: translateX(calc(-1 * var(--partner-distance)));
   }
 }
 
 .cta {
-  min-height: 308px;
+  min-height: 408px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 40px;
+  justify-content: center;
+  padding: 56px 40px;
   color: var(--white);
   text-align: center;
   background:
-    linear-gradient(rgb(0 0 0 / 0.58), rgb(0 0 0 / 0.58)),
+    linear-gradient(rgb(0 0 0 / 0.62), rgb(0 0 0 / 0.62)),
     var(--cta-image) center / cover;
+}
+
+.cta > * {
+  align-self: center;
+  width: min(100%, 900px);
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.cta .eyebrow {
+  width: auto;
 }
 
 .cta h2 {
   margin-top: 5px;
+  margin-bottom: 0;
+  max-width: 850px;
+  color: var(--white);
+  font-size: 42px;
+  line-height: 1.28;
 }
 
 .cta p:not(.eyebrow) {
-  max-width: 365px;
-  margin: 5px 0 20px;
-  font-size: 15px;
-  line-height: 1.55;
+  max-width: 560px;
+  margin: 8px 0 30px;
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1.38;
+}
+
+.cta .button {
+  width: auto;
+  min-width: 216px;
+  min-height: 64px;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .about-page-hero {
@@ -594,7 +631,7 @@ h3,
   color: var(--white);
   background:
     linear-gradient(rgb(0 0 0 / 0.42), rgb(0 0 0 / 0.42)),
-    linear-gradient(100deg, #12393d 0%, #496e6c 48%, #a2b66a 100%);
+    var(--hero-image) center / cover;
 }
 
 .about-page-hero::before {
@@ -655,19 +692,27 @@ h3,
   width: 100%;
   min-height: 240px;
   overflow: hidden;
-  background:
-    linear-gradient(115deg, rgb(255 255 255 / 0.86), rgb(255 255 255 / 0.48)),
-    repeating-linear-gradient(135deg, rgb(12 62 69 / 0.08) 0 1px, transparent 1px 18px),
-    #e7ebe3;
+  background-position: center;
+  background-size: cover;
 }
 
 .about-office-placeholder {
   min-height: 245px;
   background:
-    radial-gradient(circle at 38% 48%, rgb(12 62 69 / 0.12), transparent 16%),
-    linear-gradient(90deg, transparent 0 48%, rgb(12 62 69 / 0.07) 48% 49%, transparent 49% 100%),
-    linear-gradient(0deg, rgb(255 255 255 / 0.82), rgb(255 255 255 / 0.82)),
-    #e5e5df;
+    linear-gradient(rgb(12 62 69 / 0.1), rgb(12 62 69 / 0.1)),
+    var(--office-image) center / cover;
+}
+
+.mission-image {
+  background:
+    linear-gradient(rgb(14 62 69 / 0.12), rgb(14 62 69 / 0.12)),
+    var(--building-image) center / cover;
+}
+
+.vision-image {
+  background:
+    linear-gradient(rgb(14 62 69 / 0.12), rgb(14 62 69 / 0.12)),
+    var(--install-image) center / cover;
 }
 
 .legacy-section,
@@ -855,9 +900,8 @@ h3,
   place-items: center;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgb(12 62 69 / 0.84), rgb(6 79 92 / 0.5)),
-    repeating-linear-gradient(135deg, transparent 0 28px, rgb(255 255 255 / 0.07) 28px 29px),
-    #315b60;
+    linear-gradient(135deg, rgb(12 62 69 / 0.44), rgb(6 79 92 / 0.12)),
+    var(--solar-image) center / cover;
 }
 
 .service-media::after {
@@ -869,28 +913,19 @@ h3,
 }
 
 .service-media span {
-  position: relative;
-  z-index: 1;
-  padding: 12px 18px;
-  border: 1px solid rgb(255 255 255 / 0.32);
-  border-radius: 999px;
-  color: rgb(255 255 255 / 0.78);
-  font-size: 14px;
-  letter-spacing: 0.04em;
+  display: none;
 }
 
 .service-media-hvac {
   background:
-    linear-gradient(135deg, rgb(15 49 54 / 0.86), rgb(97 128 120 / 0.52)),
-    repeating-linear-gradient(45deg, transparent 0 34px, rgb(255 255 255 / 0.06) 34px 35px),
-    #536f70;
+    linear-gradient(135deg, rgb(15 49 54 / 0.44), rgb(97 128 120 / 0.12)),
+    var(--hvac-image) center / cover;
 }
 
 .service-media-security {
   background:
-    linear-gradient(135deg, rgb(6 45 53 / 0.9), rgb(93 135 68 / 0.5)),
-    radial-gradient(circle at 70% 30%, rgb(255 255 255 / 0.12), transparent 18%),
-    #294f53;
+    linear-gradient(135deg, rgb(6 45 53 / 0.52), rgb(93 135 68 / 0.18)),
+    var(--security-image) center / cover;
 }
 
 .service-copy {
@@ -1082,29 +1117,23 @@ h3,
 }
 
 .service-card-media span {
-  padding: 8px 13px;
-  border: 1px solid rgb(255 255 255 / 0.35);
-  border-radius: 999px;
-  color: rgb(255 255 255 / 0.82);
-  font-size: 12px;
-  background: rgb(7 49 55 / 0.35);
-  backdrop-filter: blur(8px);
+  display: none;
 }
 
 .card-solar {
-  background-image: linear-gradient(rgb(4 45 50 / 0.12), rgb(4 45 50 / 0.12)), var(--hero-image-2);
+  background-image: linear-gradient(rgb(4 45 50 / 0.12), rgb(4 45 50 / 0.12)), var(--solar-image);
 }
 
 .card-hvac {
   background:
-    linear-gradient(145deg, rgb(83 109 112 / 0.28), rgb(8 59 65 / 0.58)),
-    repeating-linear-gradient(90deg, #94a3a2 0 42px, #74898a 42px 52px);
+    linear-gradient(145deg, rgb(83 109 112 / 0.18), rgb(8 59 65 / 0.38)),
+    var(--hvac-image) center / cover;
 }
 
 .card-security {
   background:
-    radial-gradient(circle at 68% 34%, rgb(255 255 255 / 0.22), transparent 8%),
-    linear-gradient(145deg, #56746a, #173f47);
+    linear-gradient(145deg, rgb(86 116 106 / 0.22), rgb(23 63 71 / 0.44)),
+    var(--security-image) center / cover;
 }
 
 .service-card h2 {
@@ -1143,6 +1172,289 @@ h3,
   padding-bottom: 38px;
 }
 
+/* Solar solutions page */
+.solar-page {
+  background: var(--paper);
+}
+
+.solar-hero {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  padding: 90px 96px 52px;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 0.68), rgb(0 0 0 / 0.34) 48%, rgb(0 0 0 / 0.12)),
+    url("assets/generated/solar-home-system.png") center 46% / cover;
+}
+
+.back-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  margin-top: 8px;
+  color: var(--white);
+  font-size: 13px;
+}
+
+.solar-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin-top: 76px;
+  text-shadow: 1px 2px 5px rgb(0 0 0 / 0.32);
+}
+
+.solar-hero-copy h1 {
+  color: var(--white);
+  font-size: clamp(38px, 4vw, 52px);
+  line-height: 1.07;
+}
+
+.solar-hero-copy p {
+  max-width: 460px;
+  margin: 10px 0 18px;
+  color: var(--white);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.energy-setup,
+.why-solar {
+  padding: 42px 96px 0;
+  background: var(--paper);
+}
+
+.section-heading h2 {
+  color: var(--teal);
+  font-size: clamp(32px, 3vw, 40px);
+  line-height: 1.05;
+}
+
+.section-heading p {
+  max-width: 760px;
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.setup-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.setup-card {
+  position: relative;
+  min-height: 230px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 13px;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 17px 26px rgb(12 62 69 / 0.24);
+}
+
+.setup-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgb(5 65 72 / 0.98) 72%);
+}
+
+.setup-card > div {
+  position: relative;
+  z-index: 1;
+  padding: 16px 18px;
+  color: var(--white);
+}
+
+.setup-card h3 {
+  color: var(--green);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.setup-card p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.setup-grid {
+  background-image: url("assets/photos/solar/solar-panels-sunset.jpg");
+}
+
+.setup-hybrid {
+  background-image: url("assets/generated/solar-home-system.png");
+}
+
+.setup-offgrid {
+  background-image: url("assets/photos/solar/solar-rooftop-system.jpg");
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 22px;
+  padding-bottom: 46px;
+}
+
+.why-grid h3 {
+  color: var(--teal);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.why-grid p {
+  margin: 5px 0 0;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.solar-install-types {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.31fr) minmax(0, 0.69fr);
+  gap: 34px;
+  align-items: center;
+  padding: 64px 96px 66px;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--teal);
+}
+
+.solar-install-types::before,
+.solar-install-types::after {
+  content: "";
+  position: absolute;
+  width: 560px;
+  height: 440px;
+  background: url("assets/patterns/wavy-line-large.png") center / contain no-repeat;
+  filter: brightness(0) invert(1);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.solar-install-types::before {
+  left: -285px;
+  bottom: -135px;
+  transform: rotate(115deg);
+}
+
+.solar-install-types::after {
+  right: -250px;
+  top: -120px;
+  transform: rotate(-55deg);
+}
+
+.solar-install-copy,
+.install-gallery {
+  position: relative;
+  z-index: 1;
+}
+
+.solar-install-copy h2 {
+  max-width: 260px;
+  color: var(--white);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.08;
+}
+
+.solar-install-copy p {
+  max-width: 240px;
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.install-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.install-card {
+  position: relative;
+  min-height: 210px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background-position: center;
+  background-size: cover;
+}
+
+.install-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 52%, rgb(0 0 0 / 0.72));
+}
+
+.install-card figcaption {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  color: var(--white);
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.install-deck {
+  min-height: 275px;
+}
+
+.install-roof {
+  background-image: url("assets/photos/solar/solar-rooftop-system.jpg");
+}
+
+.install-ground {
+  background-image: url("assets/photos/solar/commercial-rooftop-solar.jpg");
+}
+
+.install-deck {
+  background-image: url("assets/photos/solar/solar-pv-array.jpg");
+}
+
+.install-floating {
+  background-image: url("assets/photos/solar/solar-farm-wide.jpg");
+}
+
+.solar-brand-strip {
+  min-height: 122px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(38px, 6vw, 86px);
+  padding: 32px 24px;
+  overflow: hidden;
+  background: var(--paper);
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: clamp(22px, 2.35vw, 34px);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.brand-red {
+  color: #e5252a;
+}
+
+.brand-orange {
+  color: #f6a400;
+}
+
+.brand-blue {
+  color: #0472c9;
+}
+
 /* Contact page */
 .contact-page {
   background: var(--paper);
@@ -1150,111 +1462,133 @@ h3,
 
 .contact-hero {
   position: relative;
-  min-height: 560px;
+  min-height: clamp(420px, 31vw, 486px);
   overflow: hidden;
-  padding: 46px 100px 54px;
+  padding: 40px clamp(64px, 7vw, 100px) 54px;
   color: var(--white);
   background:
-    linear-gradient(180deg, rgb(4 19 27 / 0.18), rgb(4 19 27 / 0.4)),
-    linear-gradient(115deg, rgb(86 97 70 / 0.35), rgb(29 54 63 / 0.78) 56%, rgb(14 28 34 / 0.92)),
-    radial-gradient(circle at 30% 30%, rgb(255 255 255 / 0.08), transparent 18%),
-    linear-gradient(135deg, #7f8f6e, #44565c 55%, #172830 100%);
+    linear-gradient(90deg, rgb(25 33 20 / 0.6), rgb(30 39 24 / 0.32)),
+    linear-gradient(180deg, rgb(7 26 28 / 0.1), rgb(7 26 28 / 0.24)),
+    var(--contact-hero-image) center 46% / cover;
 }
 
 .contact-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.05), transparent 28%),
-    radial-gradient(circle at 62% 38%, rgb(255 255 255 / 0.16), transparent 10%),
-    linear-gradient(165deg, transparent 0 42%, rgb(255 255 255 / 0.04) 42% 44%, transparent 44% 100%);
+  background: linear-gradient(180deg, transparent 0 62%, rgb(245 245 240 / 0.05) 100%);
   pointer-events: none;
 }
 
 .contact-hero-content {
   position: relative;
   z-index: 1;
-  max-width: 760px;
-  padding-top: 150px;
+  max-width: 640px;
+  padding-top: clamp(118px, 9vw, 142px);
 }
 
 .contact-hero h1 {
-  max-width: 640px;
-  font-size: clamp(60px, 6vw, 86px);
-  line-height: 0.96;
+  max-width: 575px;
+  color: var(--white);
+  font-size: clamp(42px, 3.9vw, 58px);
+  line-height: 1.1;
   text-shadow: 1px 2px 5px rgb(0 0 0 / 0.28);
 }
 
 .contact-hero p {
-  max-width: 560px;
-  margin: 18px 0 0;
+  max-width: 555px;
+  margin: 28px 0 0;
+  color: var(--white);
   font-size: 18px;
-  line-height: 1.45;
+  line-height: 1.42;
 }
 
 .contact-info-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  padding: 48px 100px 40px;
-  background: linear-gradient(180deg, rgb(255 255 255 / 0.48), transparent 30%), var(--paper);
+  grid-template-columns: repeat(2, minmax(340px, 500px));
+  gap: 42px clamp(42px, 4vw, 72px);
+  justify-content: center;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 74px 64px 84px;
+  background: var(--paper);
 }
 
 .contact-info-card {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-  min-height: 174px;
-  padding: 26px 24px;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 26px;
+  align-items: center;
+  min-height: 190px;
+  padding: 32px 38px;
   border-radius: 18px;
   background: #ffffff;
-  box-shadow: 0 16px 40px rgb(0 0 0 / 0.06);
+  box-shadow: 0 24px 60px rgb(12 62 69 / 0.08);
 }
 
 .contact-info-card-wide {
   grid-column: 1 / -1;
   justify-self: center;
-  width: min(100%, 420px);
+  width: min(100%, 500px);
 }
 
 .contact-card-icon {
+  position: relative;
   display: grid;
-  width: 56px;
-  height: 56px;
+  width: 70px;
+  height: 70px;
   place-items: center;
   border-radius: 50%;
   background: var(--teal);
   color: var(--white);
-  font-size: 24px;
-  font-weight: 600;
   box-shadow: 0 10px 18px rgb(12 62 69 / 0.15);
+}
+
+.contact-card-icon::before {
+  content: "";
+  width: 34px;
+  height: 34px;
+  background: var(--white);
+  mask: var(--contact-icon) center / contain no-repeat;
+  -webkit-mask: var(--contact-icon) center / contain no-repeat;
+}
+
+.contact-card-phone {
+  --contact-icon: url("assets/icons/contact/phone-call.svg");
+}
+
+.contact-card-mail {
+  --contact-icon: url("assets/icons/contact/email-envelope.svg");
+}
+
+.contact-card-clock {
+  --contact-icon: url("assets/icons/contact/clock.svg");
 }
 
 .contact-info-card h2 {
   color: var(--teal);
-  font-size: 24px;
+  font-size: clamp(24px, 1.9vw, 30px);
   line-height: 1.2;
 }
 
 .contact-highlight {
-  margin: 18px 0 4px;
+  margin: 14px 0 9px;
   color: var(--teal);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
+  line-height: 1.28;
 }
 
 .contact-info-card p {
   margin: 0;
-  color: #333;
-  font-size: 14px;
-  line-height: 1.5;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 .contact-map-section {
   display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(420px, 1.1fr);
+  grid-template-columns: minmax(320px, 0.43fr) minmax(420px, 0.57fr);
   align-items: stretch;
   background: var(--white);
 }
@@ -1262,60 +1596,51 @@ h3,
 .contact-address-copy {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 18px;
-  align-items: center;
-  padding: 34px 100px;
+  gap: 22px;
+  align-items: start;
+  padding: 92px 42px 78px 92px;
   background: var(--white);
 }
 
 .contact-address-icon {
-  width: 52px;
-  height: 52px;
+  position: relative;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
   border-radius: 50%;
   background: var(--teal);
-  position: relative;
 }
 
 .contact-address-icon::before {
   content: "";
-  position: absolute;
-  inset: 16px;
-  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   background: var(--white);
+  mask: url("assets/icons/contact/map-pin.svg") center / contain no-repeat;
+  -webkit-mask: url("assets/icons/contact/map-pin.svg") center / contain no-repeat;
 }
 
 .contact-address-copy h2 {
   color: var(--teal);
-  font-size: 18px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 1.45;
 }
 
 .contact-address-copy p {
-  margin: 14px 0 0;
-  color: #333;
+  margin: 32px 0 0;
+  color: var(--ink);
   font-size: 15px;
-  line-height: 1.55;
+  line-height: 1.45;
 }
 
-.contact-map-placeholder {
-  min-height: 320px;
-  background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.82), rgb(255 255 255 / 0.82)),
-    repeating-linear-gradient(0deg, rgb(194 210 219 / 0.6) 0 1px, transparent 1px 28px),
-    repeating-linear-gradient(90deg, rgb(194 210 219 / 0.6) 0 1px, transparent 1px 28px),
-    linear-gradient(145deg, #dfe9ef, #c9d7e0 50%, #b7c8d4);
-  border-left: 1px solid rgb(12 62 69 / 0.08);
-}
-
-.contact-map-placeholder::before {
-  content: "Map placeholder";
-  display: grid;
-  place-items: center;
-  min-height: 100%;
-  color: rgb(12 62 69 / 0.55);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.03em;
+.contact-map {
+  display: block;
+  width: 100%;
+  min-height: 330px;
+  border: 0;
 }
 
 /* Partner page */
@@ -1444,29 +1769,28 @@ h3,
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(145deg, rgb(255 255 255 / 0.12), transparent 35%),
-    repeating-linear-gradient(135deg, rgb(255 255 255 / 0.12) 0 1px, transparent 1px 18px);
-  opacity: 0.85;
+    linear-gradient(180deg, rgb(255 255 255 / 0.08), rgb(12 62 69 / 0.18));
+  opacity: 1;
 }
 
 .partner-card-media-1 {
-  background-image: linear-gradient(145deg, #b9c4cf, #7e94a4 56%, #556370);
+  background-image: var(--inverter-image);
 }
 
 .partner-card-media-2 {
-  background-image: linear-gradient(145deg, #7ba6d6, #2d78b3 48%, #1f3f8f);
+  background-image: var(--install-image);
 }
 
 .partner-card-media-3 {
-  background-image: linear-gradient(145deg, #d6d9dc, #95a2aa 42%, #6d7c84);
+  background-image: var(--solar-image);
 }
 
 .partner-card-media-4 {
-  background-image: linear-gradient(145deg, #9eb2c1, #6d8594 55%, #394a57);
+  background-image: var(--business-image);
 }
 
 .partner-card-media-5 {
-  background-image: linear-gradient(145deg, #0f2d44, #203f58 45%, #10181e);
+  background-image: var(--support-image);
 }
 
 .partner-card-copy {
@@ -1500,7 +1824,7 @@ h3,
   color: var(--white);
   background:
     linear-gradient(180deg, rgb(8 48 56 / 0.58), rgb(8 48 56 / 0.58)),
-    url("assets/hero-default.png") center / cover no-repeat;
+    var(--cta-image) center / cover no-repeat;
 }
 
 .partner-empowering::before {
@@ -1570,30 +1894,13 @@ h3,
 }
 
 .help-illustration {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  color: var(--teal);
+  width: 118px;
 }
 
-.help-screen {
-  display: grid;
-  width: 62px;
-  height: 52px;
-  place-items: center;
-  border: 2px solid var(--teal);
-  font-size: 34px;
-}
-
-.help-person {
-  display: grid;
-  width: 32px;
-  height: 60px;
-  place-items: center;
-  border: 2px solid var(--teal);
-  border-radius: 50% 50% 35% 35%;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 20px;
+.help-illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .help-copy h2 {
@@ -1622,18 +1929,6 @@ h3,
 
 .mission-vision .about-placeholder {
   min-height: 382px;
-}
-
-.mission-image {
-  background:
-    linear-gradient(rgb(14 62 69 / 0.08), rgb(14 62 69 / 0.08)),
-    linear-gradient(160deg, #4aa8dd, #d6eef6 52%, #82969a);
-}
-
-.vision-image {
-  background:
-    linear-gradient(rgb(14 62 69 / 0.04), rgb(14 62 69 / 0.04)),
-    linear-gradient(165deg, #a4d464, #eef4c7 48%, #81b5c2);
 }
 
 .mv-copy {
@@ -1858,15 +2153,16 @@ h3,
 
 @media (max-width: 1024px) {
   .navbar {
-    height: 80px;
+    height: 73px;
     align-items: center;
-    border-color: rgb(255 255 255 / 0.28);
+    border-color: rgb(255 255 255 / 0.42);
     border-radius: 999px;
     flex-direction: row;
     flex-wrap: nowrap;
-    background: rgb(42 42 42 / 0.94);
-    box-shadow: 0 8px 28px rgb(0 0 0 / 0.2);
-    backdrop-filter: blur(18px);
+    gap: 18px;
+    background: rgb(255 255 255 / 0.18);
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.25);
+    backdrop-filter: blur(16px);
   }
 
   .hamburger {
@@ -1906,20 +2202,22 @@ h3,
 
   .nav-menu {
     display: none;
-    position: fixed;
-    z-index: -1;
-    top: 0;
+    position: absolute;
+    z-index: 4;
+    top: calc(100% + 12px);
     left: 0;
     right: 0;
-    width: 100vw;
-    height: 100dvh;
-    padding: 145px 24px 48px;
+    width: 100%;
+    max-height: calc(100dvh - 125px);
+    padding: 18px;
     overflow-y: auto;
     flex-direction: column;
-    align-items: center;
-    gap: 0;
-    background: linear-gradient(to bottom, transparent 0 112px, var(--white) 112px);
-    box-shadow: none;
+    align-items: stretch;
+    gap: 8px;
+    border: 1px solid rgb(12 62 69 / 0.08);
+    border-radius: 28px;
+    background: var(--white);
+    box-shadow: 0 18px 42px rgb(0 0 0 / 0.14);
   }
 
   .nav-toggle:checked ~ .nav-menu {
@@ -1927,24 +2225,25 @@ h3,
   }
 
   .nav-links {
-    width: min(100%, 420px);
+    width: 100%;
     flex-direction: column;
-    align-items: center;
-    gap: 0;
+    align-items: stretch;
+    gap: 8px;
     color: var(--ink);
   }
 
   .nav-links a {
     display: flex;
     width: 100%;
-    min-height: 76px;
+    min-height: 48px;
     align-items: center;
     justify-content: center;
-    padding: 18px 20px;
-    border-radius: 0;
-    font-size: 21px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 16px;
     font-weight: 600;
     text-align: center;
+    background: transparent;
   }
 
   .nav-links a:hover {
@@ -1953,19 +2252,16 @@ h3,
 
   .contact-pill {
     width: 100%;
-    min-height: 76px;
+    min-height: 48px;
     margin-top: 0;
     color: var(--ink);
-    background: transparent;
-    box-shadow: none;
+    color: var(--white);
+    background: linear-gradient(90deg, var(--button-a), var(--button-b));
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.14);
   }
 
   .nav-links .active::after {
     display: none;
-  }
-
-  body:has(.nav-toggle:checked) {
-    overflow: hidden;
   }
 
   .timeline {
@@ -1985,18 +2281,25 @@ h3,
     padding-left: 64px;
   }
   .contact-hero {
-    min-height: 520px;
+    min-height: 500px;
     padding-right: 64px;
     padding-left: 64px;
   }
 
   .contact-hero-content {
-    padding-top: 120px;
+    max-width: 560px;
+    padding-top: 135px;
   }
 
   .contact-info-grid {
+    grid-template-columns: minmax(0, 520px);
+    gap: 28px;
     padding-right: 64px;
     padding-left: 64px;
+  }
+
+  .contact-info-card-wide {
+    width: 100%;
   }
 
   .contact-map-section {
@@ -2004,8 +2307,59 @@ h3,
   }
 
   .contact-address-copy {
+    padding-top: 36px;
+    padding-bottom: 28px;
     padding-right: 64px;
     padding-left: 64px;
+  }
+
+  .contact-map {
+    min-height: 390px;
+  }
+
+  .solar-hero {
+    min-height: 440px;
+    padding-right: 64px;
+    padding-left: 64px;
+    background-position: 54% center;
+  }
+
+  .solar-hero-copy {
+    margin-top: 86px;
+  }
+
+  .energy-setup,
+  .why-solar {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  .setup-card {
+    min-height: 190px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solar-install-types {
+    grid-template-columns: minmax(176px, 0.34fr) minmax(0, 0.66fr);
+    gap: 24px;
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  .install-card {
+    min-height: 166px;
+  }
+
+  .install-deck {
+    min-height: 210px;
+  }
+
+  .solar-brand-strip {
+    justify-content: flex-start;
+    overflow-x: auto;
   }
 
   .service-cards-section {
@@ -2230,32 +2584,72 @@ h3,
     padding: 46px 32px 38px;
   }
   .contact-hero {
-    min-height: 480px;
-    padding: 190px 32px 42px;
+    min-height: 306px;
+    padding: 104px 24px 38px;
+    background-position: center top;
   }
 
   .contact-hero-content {
+    max-width: 320px;
     padding-top: 0;
   }
 
   .contact-hero h1 {
-    font-size: clamp(44px, 12vw, 62px);
+    max-width: 310px;
+    font-size: clamp(27px, 8.7vw, 38px);
+    line-height: 1.08;
   }
 
   .contact-hero p {
-    font-size: 16px;
+    max-width: 280px;
+    margin-top: 24px;
+    font-size: 9px;
+    line-height: 1.45;
   }
 
   .contact-info-grid {
     grid-template-columns: 1fr;
     gap: 18px;
-    padding: 40px 32px 32px;
+    padding: 24px 20px 26px;
   }
 
   .contact-info-card,
   .contact-info-card-wide {
     width: 100%;
-    min-height: 0;
+    min-height: 132px;
+  }
+
+  .contact-info-card {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 15px;
+    align-items: start;
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+
+  .contact-card-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .contact-card-icon::before {
+    width: 22px;
+    height: 22px;
+  }
+
+  .contact-info-card h2 {
+    font-size: 20px;
+  }
+
+  .contact-highlight {
+    margin: 16px 0 6px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .contact-info-card p {
+    font-size: 12px;
+    line-height: 1.38;
   }
 
   .contact-map-section {
@@ -2263,11 +2657,158 @@ h3,
   }
 
   .contact-address-copy {
-    padding: 28px 32px;
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 15px;
+    padding: 24px 20px 24px;
   }
 
-  .contact-map-placeholder {
-    min-height: 240px;
+  .contact-address-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .contact-address-icon::before {
+    width: 23px;
+    height: 23px;
+  }
+
+  .contact-address-copy h2 {
+    font-size: 10px;
+    line-height: 1.38;
+  }
+
+  .contact-address-copy p {
+    grid-column: 1 / -1;
+    margin-top: 18px;
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .contact-map {
+    min-height: 184px;
+  }
+
+  .solar-hero {
+    min-height: 318px;
+    padding: 104px 22px 34px;
+    background-position: 48% top;
+  }
+
+  .back-link {
+    margin-top: 0;
+    font-size: 9px;
+  }
+
+  .solar-hero-copy {
+    max-width: 270px;
+    margin-top: 28px;
+  }
+
+  .solar-hero-copy h1 {
+    font-size: clamp(28px, 8.4vw, 38px);
+    line-height: 1.05;
+  }
+
+  .solar-hero-copy p {
+    max-width: 250px;
+    margin: 5px 0 10px;
+    font-size: 8px;
+    line-height: 1.35;
+  }
+
+  .solar-hero-copy .button {
+    min-height: 31px;
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: 8px;
+  }
+
+  .energy-setup,
+  .why-solar {
+    padding: 28px 22px 0;
+  }
+
+  .section-heading h2 {
+    font-size: 22px;
+  }
+
+  .section-heading p {
+    font-size: 9px;
+  }
+
+  .setup-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 14px;
+  }
+
+  .setup-card {
+    min-height: 168px;
+  }
+
+  .setup-card h3 {
+    font-size: 14px;
+  }
+
+  .setup-card p {
+    font-size: 9px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+    padding-bottom: 28px;
+  }
+
+  .why-grid h3 {
+    font-size: 9px;
+  }
+
+  .why-grid p {
+    font-size: 8px;
+  }
+
+  .solar-install-types {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px 22px 28px;
+  }
+
+  .solar-install-copy h2 {
+    max-width: 220px;
+    font-size: 20px;
+  }
+
+  .solar-install-copy p {
+    max-width: 240px;
+    margin-top: 6px;
+    font-size: 9px;
+  }
+
+  .install-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .install-card {
+    min-height: 116px;
+  }
+
+  .install-deck {
+    min-height: 116px;
+  }
+
+  .install-card figcaption {
+    font-size: 8px;
+  }
+
+  .solar-brand-strip {
+    min-height: 82px;
+    justify-content: flex-start;
+    gap: 42px;
+    overflow-x: auto;
+    padding: 20px 22px;
+    font-size: 22px;
   }
 
   .help-copy p br {
@@ -2411,16 +2952,100 @@ h3,
   }
 
   .footer {
-    padding: 40px 24px;
+    min-height: 0;
+    padding: 32px 28px 42px;
   }
 
   .footer-inner {
-    grid-template-columns: 1fr;
-    gap: 113px;
+    display: block;
+    max-width: 330px;
+    margin: 0 auto;
   }
 
   .footer a,
   .footer p {
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 1.32;
+  }
+
+  .footer h2,
+  .footer h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.15;
+  }
+
+  .footer .footer-link {
+    width: 100%;
+    max-width: 285px;
+    margin-bottom: 10px;
+  }
+
+  .footer .footer-link-text {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .footer .footer-arrow {
+    margin-left: auto;
+  }
+
+  .footer-inner > div:nth-child(3) {
+    margin-top: 34px;
+  }
+
+  .contact-line {
+    gap: 8px;
+    margin-bottom: 7px;
+  }
+
+  .contact-icon {
+    flex-basis: 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+  }
+
+  .mail-icon::before {
+    inset: 4px 2px auto;
+    height: 10px;
+  }
+
+  .footer h3 {
+    margin-top: 18px;
+  }
+
+  .socials {
+    gap: 10px;
+  }
+
+  .socials a {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: var(--white);
+  }
+
+  .social::before {
+    color: var(--teal);
+  }
+
+  .facebook::before {
+    font-size: 22px;
+  }
+
+  .tiktok::before {
+    font-size: 20px;
+  }
+
+  .youtube {
+    width: 38px;
+    border-radius: 9px;
+  }
+
+  .youtube::before {
+    font-size: 13px;
   }
 }
