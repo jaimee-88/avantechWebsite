@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AvanTech solar, HVAC, and security systems." />
-    <title>Services | AvanTech</title>
+    <meta name="description" content="Request a free AvanTech solar assessment and quote." />
+    <title>Free Quote | AvanTech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="page-shell services-page">
-      <section class="services-showcase-hero">
+    <main class="page-shell quote-page">
+      <section class="quote-hero">
         <nav class="navbar" aria-label="Primary navigation">
           <a class="brand" href="index.html" aria-label="AvanTech home">
             <img src="assets/brand/avantech-horizontal-white.png" alt="AvanTech Integrated Technology Solutions, Inc." />
@@ -23,45 +23,77 @@
             <div class="nav-links nav-center">
               <a href="index.html">Home</a>
               <a href="about.html">About Us</a>
-              <a class="active" href="services.html">Services</a>
+              <a href="services.html">Services</a>
             </div>
             <div class="nav-links nav-right">
               <a href="partner.html">Partner With Us</a>
               <a href="index.html#faqs">FAQs</a>
               <a href="contact.html">Contact Us</a>
-              <a class="contact-pill" href="quote.html">Free Quote</a>
+              <a class="contact-pill active" href="quote.html">Free Quote</a>
             </div>
           </div>
         </nav>
 
-        <div class="services-showcase-copy">
-          <h1>Integrated Systems.<br />Premium Quality.<br />Built to Perform.</h1>
-          <p>Carefully selected products from trusted global brands.<br />Engineered for efficiency, reliability, and long-term value.</p>
+        <div class="quote-hero-copy">
+          <h1>We’d be happy to help you reduce your electricity costs through a customized solar energy solution.</h1>
         </div>
       </section>
 
-      <section class="service-cards-section" aria-label="AvanTech services">
-        <article class="service-card" id="solar">
-          <div class="service-card-media card-solar" role="img" aria-label="Solar panel field"><span>Solar image</span></div>
-          <h2>Solar Solutions</h2>
-          <p>High-performance solar panels, inverters, batteries, and complete balance of system for residential, commercial, and industrial applications.</p>
-          <a href="solar-solutions.html">Explore Solar Solutions <span aria-hidden="true">›</span></a>
-        </article>
-        <article class="service-card" id="hvac">
-          <div class="service-card-media card-hvac" role="img" aria-label="HVAC ductwork system"><span>HVAC image</span></div>
-          <h2>HVAC Solutions</h2>
-          <p>Energy-efficient heating, ventilation, and air conditioning systems designed for comfort, durability, and optimal performance.</p>
-          <a href="contact.html">Explore HVAC Solutions <span aria-hidden="true">›</span></a>
-        </article>
-        <article class="service-card" id="security">
-          <div class="service-card-media card-security" role="img" aria-label="Security camera on a building"><span>Security image</span></div>
-          <h2>Security Systems</h2>
-          <p>Advanced security systems including CCTV, access control, intrusion detection, and integrated monitoring solutions for complete peace of mind.</p>
-          <a href="contact.html">Explore Security Systems <span aria-hidden="true">›</span></a>
-        </article>
+      <section class="quote-panel" aria-label="Request a free assessment">
+        <form class="quote-form" action="mailto:sales.avantech@gmail.com" method="post" enctype="text/plain">
+          <h2>Applicant Information</h2>
+
+          <label for="quote-name">Full Name</label>
+          <div class="quote-field quote-field-user">
+            <input id="quote-name" name="Full Name" type="text" placeholder="Juan C. Dela Cruz" autocomplete="name" />
+          </div>
+
+          <label for="quote-phone">Phone Number</label>
+          <div class="quote-field quote-field-phone">
+            <input id="quote-phone" name="Phone Number" type="tel" placeholder="0912-345-6789" autocomplete="tel" />
+          </div>
+
+          <label for="quote-email">Email Address</label>
+          <div class="quote-field quote-field-mail">
+            <input id="quote-email" name="Email Address" type="email" placeholder="juandelacruz@example.com" autocomplete="email" />
+          </div>
+
+          <label for="quote-location">Location</label>
+          <div class="quote-field quote-field-location">
+            <input id="quote-location" name="Location" type="text" placeholder="City and Municipality" autocomplete="address-level2" />
+          </div>
+
+          <label for="quote-bill">Average Monthly Electric Bill</label>
+          <div class="quote-field quote-field-bill">
+            <input id="quote-bill" name="Average Monthly Electric Bill" type="text" placeholder="e.g. Php 3000" inputmode="decimal" />
+          </div>
+
+          <label for="quote-message">Message</label>
+          <textarea id="quote-message" name="Message" placeholder="Tell us about your project..."></textarea>
+
+          <button type="submit">Request Free Assessment <span aria-hidden="true">›</span></button>
+        </form>
+
+        <aside class="quote-next" aria-label="What happens next">
+          <h2>What happens next?</h2>
+          <ol>
+            <li>
+              <strong>We’ll Contact You</strong>
+              <p>Our team will reach out to confirm your details and understand your requirements.</p>
+            </li>
+            <li>
+              <strong>Site Assessment</strong>
+              <p>We’ll schedule a site visit or consultation to assess your property and energy needs.</p>
+            </li>
+            <li>
+              <strong>Customized Proposal</strong>
+              <p>You’ll receive a personalized proposal with the best solution for you.</p>
+            </li>
+          </ol>
+        </aside>
       </section>
 
-      <footer class="footer services-footer" id="contact">
+      <footer class="footer quote-footer" id="contact">
         <div class="footer-wave footer-wave-left"></div>
         <div class="footer-wave footer-wave-right"></div>
         <div class="footer-inner">
@@ -70,8 +102,8 @@
             <a class="footer-link" href="index.html"><span class="footer-link-text">Home</span><span class="footer-arrow" aria-hidden="true"></span></a>
             <a class="footer-link" href="about.html"><span class="footer-link-text">About Us</span><span class="footer-arrow" aria-hidden="true"></span></a>
             <a class="footer-link" href="solar-solutions.html"><span class="footer-link-text">Services (Solar)</span><span class="footer-arrow" aria-hidden="true"></span></a>
-            <a class="footer-link" href="#hvac"><span class="footer-link-text">Services (HVAC)</span><span class="footer-arrow" aria-hidden="true"></span></a>
-            <a class="footer-link" href="#security"><span class="footer-link-text">Services (Security)</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="services.html#hvac"><span class="footer-link-text">Services (HVAC)</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="services.html#security"><span class="footer-link-text">Services (Security)</span><span class="footer-arrow" aria-hidden="true"></span></a>
           </div>
           <div>
             <h2 class="sr-only">More Links</h2>
@@ -94,17 +126,6 @@
           </div>
         </div>
       </footer>
-
-      <section class="help-strip" id="quote">
-        <div class="help-illustration" aria-hidden="true">
-          <img src="assets/icons/computer-and-people.svg" alt="" />
-        </div>
-        <div class="help-copy">
-          <h2>Need Help Choosing the Right Solution?</h2>
-          <p>Our experts will recommend the best products<br />tailored to your project needs and budget</p>
-        </div>
-        <a class="button" href="quote.html">Get a free quote today! <span aria-hidden="true">›</span></a>
-      </section>
     </main>
   </body>
 </html>
