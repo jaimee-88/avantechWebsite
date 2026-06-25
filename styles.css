@@ -11,7 +11,7 @@
   --placeholder-mid: linear-gradient(135deg, #dbe7e2 0%, #b9cec9 48%, #eff2ec 100%);
   --placeholder-dark: linear-gradient(135deg, #0c3e45 0%, #13616b 50%, #e9eee8 100%);
   --hero-image: url("assets/figma-reference/hero-city.png");
-  --services-hero-image: url("assets/generated/tech-hero-panels.png");
+  --services-hero-image: url("assets/figma-reference/services/f02e807d210d67f17eff3d73cbdae36ccee0dae0.png");
   --building-image: url("assets/figma-reference/about-solar-city.png");
   --office-image: url("assets/figma-reference/about-installer.png");
   --install-image: url("assets/figma-reference/about-panel-tech.png");
@@ -19,6 +19,15 @@
   --solar-image: url("assets/photos/solar/commercial-rooftop-solar.jpg");
   --hvac-image: url("assets/photos/hvac/industrial-rooftop-hvac.jpg");
   --security-image: url("assets/generated/security-control-room.png");
+  --services-card-solar-image: url("assets/figma-reference/services/c00156bd167b17c0bc4151c58cd50007ccac15c8.png");
+  --services-card-hvac-image: url("assets/figma-reference/services/b3b5ac46bb477edd9bd6b0671d693ac3db5e8f94.png");
+  --services-card-security-image: url("assets/figma-reference/services/d81bbd152b1e0b2fd12ce932c69ffa7a63ccc8f6.png");
+  --partner-hero-image: url("assets/figma-reference/partner/61ce4e546e76c98f926943a6993170df1b66c970.png");
+  --partner-design-image: url("assets/figma-reference/partner/4effc1ecec1027f209f397a79339b46f2e8afcb2.png");
+  --partner-install-image: url("assets/figma-reference/partner/559cf63a6a6c60a0c5820674a18ac9c6337ccc4c.png");
+  --partner-distributor-image: url("assets/figma-reference/partner/39327dbbe9a8af0feff31487dbba3915595f080c.png");
+  --partner-corporate-image: url("assets/figma-reference/partner/064a1d8419bcce99c580928f1c7d353aeb397f65.png");
+  --partner-support-image: url("assets/figma-reference/partner/0f85a34032bc8f5ab2c583568ea2fc82ecea0207.png");
   --inverter-image: url("assets/generated/solar-inverter-wall.png");
   --business-image: url("assets/photos/buildings/blue-business-towers.jpg");
   --support-image: url("assets/generated/smart-building-control.png");
@@ -124,8 +133,8 @@ a {
   inset: 1px;
   border-radius: inherit;
   background:
-    linear-gradient(90deg, rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.04) 18%, transparent 35%, transparent 65%, rgb(255 255 255 / 0.04) 82%, rgb(255 255 255 / 0.08)),
-    linear-gradient(180deg, rgb(255 255 255 / 0.06), transparent 42%, rgb(255 255 255 / 0.04));
+    linear-gradient(90deg, rgb(255 255 255 / 0.08) 0%, rgb(255 255 255 / 0.055) 18%, rgb(255 255 255 / 0.018) 40%, rgb(255 255 255 / 0.018) 60%, rgb(255 255 255 / 0.055) 82%, rgb(255 255 255 / 0.08) 100%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.065) 0%, rgb(255 255 255 / 0.025) 46%, rgb(255 255 255 / 0.045) 100%);
   mix-blend-mode: screen;
 }
 
@@ -421,7 +430,9 @@ h3,
   height: 440px;
   background: url("assets/patterns/wavy-line-large.png") center / contain no-repeat;
   filter: brightness(0) invert(1);
-  opacity: 0.2;
+  opacity: 0.16;
+  mask-image: radial-gradient(ellipse at center, #000 0%, #000 54%, rgb(0 0 0 / 0.55) 74%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, #000 54%, rgb(0 0 0 / 0.55) 74%, transparent 100%);
 }
 
 .wave-left {
@@ -725,7 +736,7 @@ h3,
   width: min(66vw, 990px);
   min-height: 0;
   background:
-    linear-gradient(90deg, var(--paper) 0%, rgb(245 245 240 / 0.96) 12%, rgb(245 245 240 / 0) 38%, rgb(245 245 240 / 0) 76%, var(--paper) 100%),
+    linear-gradient(90deg, var(--paper) 0%, rgb(245 245 240 / 0.96) 12%, rgb(245 245 240 / 0.78) 24%, rgb(245 245 240 / 0.42) 38%, rgb(245 245 240 / 0.12) 50%, rgb(245 245 240 / 0) 60%, rgb(245 245 240 / 0) 80%, rgb(245 245 240 / 0.28) 90%, var(--paper) 100%),
     var(--about-who-image) center right / cover no-repeat;
   pointer-events: none;
 }
@@ -1091,12 +1102,12 @@ h3,
 /* Compact services dashboard from the approved reference */
 .services-showcase-hero {
   position: relative;
-  min-height: 720px;
+  min-height: 805px;
   overflow: hidden;
-  padding: 305px 100px 70px;
+  padding: 263px 100px 70px;
   color: var(--white);
   background:
-    linear-gradient(90deg, rgb(0 0 0 / 0.52), rgb(0 0 0 / 0.2)),
+    linear-gradient(90deg, rgb(0 0 0 / 0.48), rgb(0 0 0 / 0.18)),
     var(--services-hero-image) center / cover;
 }
 
@@ -1146,48 +1157,44 @@ h3,
 }
 
 .card-solar {
-  background-image: linear-gradient(rgb(4 45 50 / 0.12), rgb(4 45 50 / 0.12)), var(--solar-image);
+  background-image: var(--services-card-solar-image);
 }
 
 .card-hvac {
-  background:
-    linear-gradient(145deg, rgb(83 109 112 / 0.18), rgb(8 59 65 / 0.38)),
-    var(--hvac-image) center / cover;
+  background: var(--services-card-hvac-image) center / cover;
 }
 
 .card-security {
-  background:
-    linear-gradient(145deg, rgb(86 116 106 / 0.22), rgb(23 63 71 / 0.44)),
-    var(--security-image) center / cover;
+  background: var(--services-card-security-image) center / cover;
 }
 
 .service-card h2 {
-  margin: 14px 0 5px;
+  margin: 14px 0 6px;
   color: var(--teal);
-  font-size: 23px;
+  font-size: 24px;
   line-height: 1.2;
 }
 
 .service-card p {
-  min-height: 92px;
+  min-height: 98px;
   margin: 0;
   color: #535353;
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .service-card > a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 6px;
+  margin-top: 8px;
   color: var(--teal);
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 600;
 }
 
 .service-card > a span {
-  font-size: 21px;
+  font-size: 26px;
   line-height: 1;
 }
 
@@ -1678,10 +1685,8 @@ h3,
   padding: 46px 100px 78px;
   color: var(--white);
   background:
-    linear-gradient(180deg, rgb(13 22 27 / 0.18), rgb(13 22 27 / 0.42)),
-    linear-gradient(90deg, rgb(120 136 149 / 0.92), rgb(78 93 106 / 0.92) 45%, rgb(52 66 76 / 0.95)),
-    radial-gradient(circle at 28% 30%, rgb(255 255 255 / 0.1), transparent 18%),
-    linear-gradient(135deg, #8f9daa, #6d7c89 50%, #2b3540);
+    linear-gradient(180deg, rgb(13 22 27 / 0.16) 0%, rgb(13 22 27 / 0.32) 54%, rgb(13 22 27 / 0.48) 100%),
+    var(--partner-hero-image) center / cover no-repeat;
 }
 
 .partner-hero::before {
@@ -1689,9 +1694,8 @@ h3,
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(16deg, transparent 0 39%, rgb(255 255 255 / 0.05) 39% 41%, transparent 41% 100%),
-    radial-gradient(circle at 80% 24%, rgb(255 255 255 / 0.15), transparent 8%),
-    linear-gradient(180deg, transparent 0 66%, rgb(0 0 0 / 0.08) 66% 100%);
+    radial-gradient(ellipse at 28% 54%, rgb(5 16 20 / 0.26) 0%, rgb(5 16 20 / 0.14) 34%, transparent 68%),
+    linear-gradient(90deg, rgb(12 24 30 / 0.44) 0%, rgb(12 24 30 / 0.24) 36%, rgb(12 24 30 / 0.12) 58%, rgb(12 24 30 / 0.2) 78%, rgb(12 24 30 / 0.3) 100%);
   pointer-events: none;
 }
 
@@ -1699,7 +1703,7 @@ h3,
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgb(17 25 31 / 0.08), rgb(17 25 31 / 0.42));
+  background: linear-gradient(180deg, rgb(17 25 31 / 0.04) 0%, rgb(17 25 31 / 0.12) 46%, rgb(17 25 31 / 0.34) 100%);
   pointer-events: none;
 }
 
@@ -1726,7 +1730,7 @@ h3,
 .partner-benefits {
   position: relative;
   overflow: hidden;
-  padding: 58px 0 72px;
+  padding: 72px 0 74px;
   background: var(--paper);
 }
 
@@ -1744,8 +1748,8 @@ h3,
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(260px, 0.94fr) minmax(0, 1.85fr);
-  gap: 24px;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 34px;
   align-items: start;
   padding: 0 100px;
 }
@@ -1773,12 +1777,12 @@ h3,
 .partner-card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 10px;
 }
 
 .partner-card {
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #f7f5ef;
   box-shadow: 0 10px 28px rgb(0 0 0 / 0.08);
 }
@@ -1795,29 +1799,27 @@ h3,
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.08), rgb(12 62 69 / 0.18));
-  opacity: 1;
+  background: none;
 }
 
 .partner-card-media-1 {
-  background-image: var(--inverter-image);
+  background-image: var(--partner-design-image);
 }
 
 .partner-card-media-2 {
-  background-image: var(--install-image);
+  background-image: var(--partner-install-image);
 }
 
 .partner-card-media-3 {
-  background-image: var(--solar-image);
+  background-image: var(--partner-distributor-image);
 }
 
 .partner-card-media-4 {
-  background-image: var(--business-image);
+  background-image: var(--partner-corporate-image);
 }
 
 .partner-card-media-5 {
-  background-image: var(--support-image);
+  background-image: var(--partner-support-image);
 }
 
 .partner-card-copy {
@@ -1850,8 +1852,8 @@ h3,
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(180deg, rgb(8 48 56 / 0.58), rgb(8 48 56 / 0.58)),
-    var(--cta-image) center / cover no-repeat;
+    radial-gradient(ellipse at 72% 42%, rgb(255 255 255 / 0.11) 0%, rgb(255 255 255 / 0.04) 30%, transparent 62%),
+    linear-gradient(105deg, #4e666d 0%, #536c73 36%, #5b7379 68%, #657d82 100%);
 }
 
 .partner-empowering::before {
@@ -1859,9 +1861,8 @@ h3,
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.08), transparent 26%),
-    radial-gradient(circle at 50% 54%, rgb(255 255 255 / 0.08), transparent 22%),
-    linear-gradient(180deg, transparent 0 68%, rgb(5 18 22 / 0.12) 68% 100%);
+    linear-gradient(180deg, rgb(255 255 255 / 0.08) 0%, rgb(255 255 255 / 0.025) 34%, transparent 66%),
+    linear-gradient(180deg, transparent 0%, rgb(5 18 22 / 0.05) 72%, rgb(5 18 22 / 0.14) 100%);
   pointer-events: none;
 }
 
@@ -1891,7 +1892,10 @@ h3,
   position: relative;
   min-height: 315px;
   padding: 40px 100px;
-  background: var(--teal);
+  background:
+    radial-gradient(ellipse at 6% 24%, rgb(30 111 119 / 0.24) 0%, transparent 40%),
+    radial-gradient(ellipse at 92% 18%, rgb(47 126 134 / 0.2) 0%, transparent 42%),
+    linear-gradient(100deg, #0a444b 0%, #0c4b53 45%, #084149 100%);
 }
 
 .partner-footer::before {
@@ -1899,8 +1903,8 @@ h3,
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 26%, rgb(255 255 255 / 0.1), transparent 28%),
-    linear-gradient(180deg, transparent 0 54%, rgb(0 0 0 / 0.08) 54% 100%);
+    radial-gradient(ellipse at 50% 18%, rgb(255 255 255 / 0.08) 0%, rgb(255 255 255 / 0.025) 30%, transparent 58%),
+    linear-gradient(180deg, transparent 0%, rgb(0 0 0 / 0.035) 70%, rgb(0 0 0 / 0.08) 100%);
   pointer-events: none;
 }
 
@@ -2007,15 +2011,15 @@ h3,
 .solution-cards a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   margin-top: 17px;
   color: var(--white);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .solution-cards a span {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1;
 }
 
@@ -2029,7 +2033,10 @@ h3,
   overflow: hidden;
   padding: 40px 100px;
   color: var(--white);
-  background: var(--teal);
+  background:
+    radial-gradient(ellipse at 6% 24%, rgb(30 111 119 / 0.24) 0%, transparent 40%),
+    radial-gradient(ellipse at 92% 18%, rgb(47 126 134 / 0.2) 0%, transparent 42%),
+    linear-gradient(100deg, #0a444b 0%, #0c4b53 45%, #084149 100%);
 }
 
 .home-footer {
@@ -2122,6 +2129,11 @@ h3,
   gap: 92px;
   max-width: 1120px;
   margin: 0 auto;
+}
+
+.footer-inner > div:nth-child(2) {
+  align-self: start;
+  padding-top: 41px;
 }
 
 .footer h2,
@@ -2642,13 +2654,58 @@ h3,
   .solution-cards {
     gap: 32px;
   }
+
+  .partner-benefits {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .partner-benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  .partner-intro {
+    padding-top: 0;
+  }
+
+  .partner-intro h2 {
+    max-width: 620px;
+    font-size: 42px;
+    line-height: 1.08;
+  }
+
+  .partner-intro p {
+    max-width: 620px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .partner-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .partner-card-copy {
+    padding: 14px 16px 18px;
+  }
+
+  .partner-card h3 {
+    font-size: 18px;
+  }
+
+  .partner-card p {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 799px) {
   .nav-menu {
-    left: 0;
+    left: auto;
     right: 0;
-    width: 100%;
+    width: min(320px, calc(100vw - 48px));
     padding: 18px;
   }
 
