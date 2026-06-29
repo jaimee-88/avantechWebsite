@@ -1234,6 +1234,114 @@ h3,
   line-height: 1;
 }
 
+.hvac-brand-carousel {
+  --hvac-brand-distance: 3136px;
+  display: flex;
+  min-height: 154px;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid rgb(12 62 69 / 0.06);
+  background:
+    linear-gradient(90deg, rgb(79 148 16 / 0.92), rgb(148 211 70 / 0.88) 52%, rgb(105 177 34 / 0.9)),
+    var(--paper);
+}
+
+.hvac-brand-track {
+  display: flex;
+  min-width: max-content;
+  align-items: center;
+  gap: 22px;
+  padding-left: 42px;
+  animation: slide-hvac-brands 34s linear infinite;
+}
+
+.hvac-brand {
+  display: inline-flex;
+  width: 202px;
+  min-height: 74px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  border-radius: 8px;
+  color: #123a3f;
+  font-family: "Montserrat", sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgb(255 255 255 / 0.4);
+  box-shadow: 0 14px 28px rgb(34 72 18 / 0.12);
+  white-space: normal;
+}
+
+.hvac-brand.panasonic,
+.hvac-brand.samsung {
+  text-transform: none;
+}
+
+.hvac-brand.mitsubishi {
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+.hvac-brand.midea,
+.hvac-brand.daikin,
+.hvac-brand.gree,
+.hvac-brand.carrier,
+.hvac-brand.koppel {
+  text-transform: none;
+}
+
+.hvac-brand.panasonic,
+.hvac-brand.samsung,
+.hvac-brand.toshiba {
+  color: #020000;
+}
+
+.hvac-brand.tosot,
+.hvac-brand.condura,
+.hvac-brand.tcl {
+  color: #df2727;
+}
+
+.hvac-brand.lg {
+  color: #b51252;
+}
+
+.hvac-brand.mitsubishi {
+  color: #d71920;
+}
+
+.hvac-brand.daikin,
+.hvac-brand.gree {
+  color: #1682c4;
+}
+
+.hvac-brand.midea {
+  color: #ffffff;
+  background: rgb(255 255 255 / 0.18);
+}
+
+.hvac-brand.aux {
+  color: #1c6eba;
+}
+
+.hvac-brand.carrier,
+.hvac-brand.koppel {
+  color: #1f5dae;
+}
+
+@keyframes slide-hvac-brands {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-1 * var(--hvac-brand-distance)));
+  }
+}
+
 .services-footer {
   min-height: 292px;
   padding-top: 42px;
@@ -1350,7 +1458,7 @@ h3,
 }
 
 .setup-card h3 {
-  color: var(--green);
+  color: var(--white);
   font-family: "Poppins", sans-serif;
   font-size: clamp(26px, 2.4vw, 34px);
   font-weight: 600;
@@ -1395,10 +1503,11 @@ h3,
 .solar-install-types {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(250px, 0.31fr) minmax(0, 0.69fr);
-  gap: clamp(36px, 4.8vw, 72px);
-  align-items: center;
-  padding: 74px clamp(64px, 6.9vw, 100px) 78px;
+  grid-template-columns: minmax(280px, 0.95fr) repeat(2, minmax(0, 1fr));
+  grid-template-rows: clamp(300px, 23.9vw, 490px) clamp(300px, 23.9vw, 490px);
+  gap: clamp(18px, 1.38vw, 28px);
+  align-items: stretch;
+  padding: clamp(42px, 5.8vw, 92px) clamp(48px, 5.86vw, 120px);
   overflow: hidden;
   color: var(--white);
   background: var(--teal);
@@ -1434,34 +1543,38 @@ h3,
   z-index: 1;
 }
 
+.solar-install-copy {
+  align-self: center;
+  padding-right: clamp(12px, 2vw, 30px);
+}
+
 .solar-install-copy h2 {
-  max-width: 330px;
+  max-width: 520px;
   color: var(--white);
-  font-size: clamp(36px, 3.4vw, 48px);
-  line-height: 1.08;
+  font-size: clamp(36px, 3.1vw, 52px);
+  line-height: 1.1;
 }
 
 .solar-install-copy p {
-  max-width: 310px;
-  margin: 16px 0 0;
-  font-size: 18px;
-  line-height: 1.44;
+  max-width: 480px;
+  margin: 18px 0 0;
+  font-size: clamp(18px, 1.35vw, 26px);
+  line-height: 1.22;
 }
 
 .install-gallery {
-  display: grid;
-  grid-template-columns: 1.18fr 0.9fr;
-  grid-template-rows: 196px 196px;
-  gap: 22px;
+  display: contents;
 }
 
 .install-card {
   position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   margin: 0;
   overflow: hidden;
   border-radius: 12px;
   background: #d8ded8;
-  box-shadow: 0 20px 38px rgb(0 0 0 / 0.18);
+  box-shadow: 0 22px 42px rgb(0 0 0 / 0.18);
 }
 
 .install-card img {
@@ -1472,54 +1585,40 @@ h3,
 }
 
 .install-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 52%, rgb(0 0 0 / 0.72));
+  content: none;
 }
 
 .install-card figcaption {
-  position: absolute;
-  right: 18px;
-  bottom: 16px;
-  left: 18px;
+  display: grid;
+  min-height: clamp(56px, 3.75vw, 77px);
+  place-items: center;
+  padding: 12px 18px;
   color: var(--white);
-  font-size: 18px;
+  font-size: clamp(18px, 1.28vw, 26px);
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
+  background: rgb(4 54 60 / 0.96);
 }
 
 .install-roof {
-  grid-row: span 2;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.install-ground {
+  grid-column: 3;
+  grid-row: 1;
 }
 
 .install-deck {
-  min-height: 0;
+  grid-column: 1 / span 2;
+  grid-row: 2;
 }
 
-.solar-brand-strip {
-  min-height: 144px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(26px, 4.2vw, 70px);
-  padding: 34px 32px;
-  overflow: hidden;
-  background: var(--paper);
-  box-shadow: inset 0 1px 0 rgb(12 62 69 / 0.04);
-}
-
-.solar-brand-strip img {
-  display: block;
-  max-width: 148px;
-  max-height: 62px;
-  object-fit: contain;
-}
-
-.solar-brand-strip .solar-brand-wide {
-  max-width: 176px;
-  max-height: 48px;
+.install-floating {
+  grid-column: 3;
+  grid-row: 2;
 }
 
 /* Contact page */
@@ -1669,18 +1768,18 @@ h3,
 
 .contact-address-copy {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 22px;
+  grid-template-columns: clamp(58px, 5vw, 76px) minmax(0, 900px);
+  gap: clamp(18px, 2.4vw, 34px);
   align-items: start;
-  padding: 92px 42px 78px 92px;
+  padding: clamp(58px, 6vw, 92px) clamp(42px, 5vw, 88px) clamp(56px, 5.4vw, 78px) clamp(64px, 6.4vw, 92px);
   background: var(--white);
 }
 
 .contact-address-icon {
   position: relative;
   display: grid;
-  width: 58px;
-  height: 58px;
+  width: clamp(58px, 5vw, 76px);
+  height: clamp(58px, 5vw, 76px);
   place-items: center;
   border-radius: 50%;
   background: var(--teal);
@@ -1688,33 +1787,53 @@ h3,
 
 .contact-address-icon::before {
   content: "";
-  width: 30px;
-  height: 30px;
+  width: clamp(30px, 2.5vw, 38px);
+  height: clamp(30px, 2.5vw, 38px);
   background: var(--white);
   mask: url("assets/icons/contact/map-pin.svg") center / contain no-repeat;
   -webkit-mask: url("assets/icons/contact/map-pin.svg") center / contain no-repeat;
 }
 
 .contact-address-copy h2 {
+  max-width: 860px;
   color: var(--teal);
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: clamp(20px, 1.55vw, 28px);
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.35;
 }
 
 .contact-address-copy p {
-  margin: 32px 0 0;
+  grid-column: 2;
+  max-width: 820px;
+  margin: clamp(28px, 3.8vw, 54px) 0 0;
   color: var(--ink);
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: clamp(17px, 1.3vw, 22px);
+  line-height: 1.48;
+}
+
+.contact-map-shell {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 330px;
+}
+
+.contact-map-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  cursor: pointer;
 }
 
 .contact-map {
   display: block;
   width: 100%;
-  min-height: 330px;
+  height: 100%;
+  min-height: inherit;
   border: 0;
+  pointer-events: none;
 }
 
 /* Quote page */
@@ -2766,12 +2885,15 @@ h3,
   }
 
   .contact-address-copy {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 20px;
     padding-top: 36px;
     padding-bottom: 28px;
     padding-right: 64px;
     padding-left: 64px;
   }
 
+  .contact-map-shell,
   .contact-map {
     min-height: 390px;
   }
@@ -2808,24 +2930,24 @@ h3,
   }
 
   .solar-install-types {
-    grid-template-columns: minmax(210px, 0.32fr) minmax(0, 0.68fr);
-    gap: 24px;
+    grid-template-columns: minmax(210px, 0.9fr) repeat(2, minmax(0, 1fr));
+    grid-template-rows: clamp(230px, 24vw, 300px) clamp(230px, 24vw, 300px);
+    gap: 18px;
     padding-right: 64px;
     padding-left: 64px;
   }
 
-  .install-gallery {
-    grid-template-rows: 166px 166px;
-    gap: 18px;
+  .solar-install-copy h2 {
+    font-size: 32px;
+  }
+
+  .solar-install-copy p {
+    font-size: 16px;
+    line-height: 1.32;
   }
 
   .install-card figcaption {
     font-size: 16px;
-  }
-
-  .solar-brand-strip {
-    justify-content: flex-start;
-    overflow-x: auto;
   }
 
   .service-cards-section {
@@ -2835,6 +2957,26 @@ h3,
 
   .service-card p {
     min-height: 130px;
+  }
+
+  .hvac-brand-carousel {
+    --hvac-brand-distance: 2520px;
+    min-height: 132px;
+  }
+
+  .hvac-brand-track {
+    gap: 18px;
+    padding-left: 32px;
+  }
+
+  .hvac-brand {
+    width: 162px;
+    min-height: 62px;
+    font-size: 21px;
+  }
+
+  .hvac-brand.mitsubishi {
+    font-size: 12px;
   }
 
   .help-strip {
@@ -3086,6 +3228,28 @@ h3,
     width: 100%;
   }
 
+  .hvac-brand-carousel {
+    --hvac-brand-distance: 1960px;
+    min-height: 104px;
+  }
+
+  .hvac-brand-track {
+    gap: 14px;
+    padding-left: 22px;
+    animation-duration: 30s;
+  }
+
+  .hvac-brand {
+    width: 126px;
+    min-height: 52px;
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .hvac-brand.mitsubishi {
+    font-size: 10px;
+  }
+
   .services-footer {
     padding: 42px 24px;
   }
@@ -3323,8 +3487,8 @@ h3,
 
   .contact-address-copy {
     grid-template-columns: 46px minmax(0, 1fr);
-    gap: 15px;
-    padding: 24px 20px 24px;
+    gap: 16px;
+    padding: 30px 22px 28px;
   }
 
   .contact-address-icon {
@@ -3338,17 +3502,19 @@ h3,
   }
 
   .contact-address-copy h2 {
-    font-size: 10px;
-    line-height: 1.38;
+    font-size: clamp(16px, 4.2vw, 20px);
+    line-height: 1.35;
   }
 
   .contact-address-copy p {
     grid-column: 1 / -1;
-    margin-top: 18px;
-    font-size: 10px;
-    line-height: 1.4;
+    max-width: 560px;
+    margin-top: 20px;
+    font-size: clamp(14px, 3.7vw, 17px);
+    line-height: 1.45;
   }
 
+  .contact-map-shell,
   .contact-map {
     min-height: 184px;
   }
@@ -3454,6 +3620,7 @@ h3,
 
   .solar-install-types {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 26px;
     padding: 38px 22px 42px;
   }
@@ -3470,10 +3637,12 @@ h3,
     line-height: 1.42;
   }
 
-  .install-gallery {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    gap: 14px;
+  .install-roof,
+  .install-ground,
+  .install-deck,
+  .install-floating {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .install-card {
@@ -3481,30 +3650,11 @@ h3,
   }
 
   .install-roof {
-    grid-row: auto;
     min-height: 260px;
   }
 
   .install-card figcaption {
     font-size: 16px;
-  }
-
-  .solar-brand-strip {
-    min-height: 102px;
-    justify-content: flex-start;
-    gap: 28px;
-    overflow-x: auto;
-    padding: 24px 22px;
-  }
-
-  .solar-brand-strip img {
-    max-width: 112px;
-    max-height: 46px;
-  }
-
-  .solar-brand-strip .solar-brand-wide {
-    max-width: 136px;
-    max-height: 36px;
   }
 
   .help-copy p br {
