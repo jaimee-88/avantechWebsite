@@ -18,6 +18,10 @@
   --cta-image: url("assets/figma-reference/cta-solar-panels.png");
   --solar-image: url("assets/photos/solar/commercial-rooftop-solar.jpg");
   --hvac-image: url("assets/photos/hvac/industrial-rooftop-hvac.jpg");
+  --hvac-hero-slide-1: url("assets/photos/hvac/hero/hvac-ductwork-ceiling.jpg");
+  --hvac-hero-slide-2: url("assets/photos/hvac/hero/hvac-rooftop-ventilation-tokyo.jpg");
+  --hvac-hero-slide-3: url("assets/photos/hvac/hero/hvac-mezzanine-ductwork.jpg");
+  --hvac-hero-slide-4: url("assets/photos/hvac/hero/hvac-rooftop-ac-units.jpg");
   --security-image: url("assets/generated/security-control-room.png");
   --services-card-solar-image: url("assets/figma-reference/services/c00156bd167b17c0bc4151c58cd50007ccac15c8.png");
   --services-card-hvac-image: url("assets/figma-reference/services/b3b5ac46bb477edd9bd6b0671d693ac3db5e8f94.png");
@@ -1241,9 +1245,8 @@ h3,
   align-items: center;
   overflow: hidden;
   border-top: 1px solid rgb(12 62 69 / 0.06);
-  background:
-    linear-gradient(90deg, rgb(79 148 16 / 0.92), rgb(148 211 70 / 0.88) 52%, rgb(105 177 34 / 0.9)),
-    var(--paper);
+  border-bottom: 1px solid rgb(12 62 69 / 0.06);
+  background: var(--paper);
 }
 
 .hvac-brand-track {
@@ -1261,18 +1264,25 @@ h3,
   min-height: 74px;
   align-items: center;
   justify-content: center;
-  padding: 14px 18px;
+  padding: 8px 12px;
   border-radius: 8px;
   color: #123a3f;
   font-family: "Montserrat", sans-serif;
-  font-size: 27px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1;
   text-align: center;
   text-transform: uppercase;
-  background: rgb(255 255 255 / 0.4);
-  box-shadow: 0 14px 28px rgb(34 72 18 / 0.12);
+  background: transparent;
+  box-shadow: none;
   white-space: normal;
+}
+
+.hvac-brand img {
+  display: block;
+  max-width: 148px;
+  max-height: 42px;
+  object-fit: contain;
 }
 
 .hvac-brand.panasonic,
@@ -1281,8 +1291,13 @@ h3,
 }
 
 .hvac-brand.mitsubishi {
+  width: 260px;
   font-size: 14px;
   line-height: 1.15;
+}
+
+.hvac-brand.mitsubishi img {
+  max-width: 220px;
 }
 
 .hvac-brand.midea,
@@ -1319,8 +1334,7 @@ h3,
 }
 
 .hvac-brand.midea {
-  color: #ffffff;
-  background: rgb(255 255 255 / 0.18);
+  color: #0b94c8;
 }
 
 .hvac-brand.aux {
@@ -1619,6 +1633,211 @@ h3,
 .install-floating {
   grid-column: 3;
   grid-row: 2;
+}
+
+/* HVAC solutions page */
+.hvac-page {
+  background: var(--paper);
+}
+
+.hvac-hero {
+  position: relative;
+  min-height: 676px;
+  overflow: hidden;
+  padding: 118px clamp(64px, 6.9vw, 100px) 92px;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 0.68), rgb(0 0 0 / 0.38) 50%, rgb(0 0 0 / 0.08)),
+    url("assets/figma-reference/hvac/6d635408efec5b3e19a256b4ff9f14ecd7f69722.png") center / cover;
+}
+
+.hvac-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -170px -220px auto;
+  width: 560px;
+  height: 440px;
+  background: url("assets/patterns/wavy-line-large.png") center / contain no-repeat;
+  filter: brightness(0) invert(1);
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.hvac-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin-top: 96px;
+  text-shadow: 1px 2px 5px rgb(0 0 0 / 0.34);
+}
+
+.hvac-hero-copy .eyebrow {
+  margin-bottom: 14px;
+  color: var(--white);
+}
+
+.hvac-hero-copy h1 {
+  color: var(--white);
+  font-size: clamp(48px, 5.05vw, 72px);
+  line-height: 1.05;
+}
+
+.hvac-hero-copy p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 18px 0 28px;
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1.42;
+}
+
+.hvac-intro {
+  padding: 64px clamp(64px, 6.9vw, 100px) 78px;
+  background: var(--paper);
+}
+
+.hvac-intro .section-heading {
+  max-width: 980px;
+}
+
+.hvac-intro .eyebrow,
+.hvac-spaces .eyebrow {
+  color: var(--olive);
+}
+
+.hvac-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 34px;
+}
+
+.hvac-service-card {
+  position: relative;
+  min-height: 305px;
+  overflow: hidden;
+  padding: 34px 30px 32px;
+  border-radius: 18px;
+  color: var(--white);
+  background:
+    linear-gradient(150deg, rgb(6 67 75 / 0.97), rgb(12 62 69 / 0.88)),
+    var(--hvac-image) center / cover;
+  box-shadow: 0 24px 42px rgb(12 62 69 / 0.18);
+}
+
+.hvac-service-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -72px -76px auto;
+  width: 190px;
+  height: 150px;
+  background: url("assets/patterns/wavy-line-large.png") center / contain no-repeat;
+  filter: brightness(0) invert(1);
+  opacity: 0.13;
+}
+
+.hvac-service-number {
+  display: inline-block;
+  margin-bottom: 58px;
+  color: rgb(255 255 255 / 0.62);
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hvac-service-card h3,
+.hvac-service-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.hvac-service-card h3 {
+  max-width: 320px;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(22px, 1.75vw, 30px);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.hvac-service-card p {
+  margin: 14px 0 0;
+  color: rgb(255 255 255 / 0.88);
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+.hvac-spaces {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.38fr) minmax(0, 0.62fr);
+  gap: clamp(36px, 4vw, 72px);
+  align-items: center;
+  padding: clamp(60px, 6.1vw, 96px) clamp(64px, 6.9vw, 100px);
+  background: var(--white);
+}
+
+.hvac-spaces-copy h2 {
+  max-width: 540px;
+  color: var(--teal);
+  font-size: clamp(36px, 3.15vw, 52px);
+  line-height: 1.08;
+}
+
+.hvac-spaces-copy p:not(.eyebrow) {
+  max-width: 520px;
+  margin: 18px 0 0;
+  color: #303431;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.hvac-space-gallery {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  grid-template-rows: repeat(2, minmax(210px, 1fr));
+  gap: 20px;
+  min-height: 560px;
+}
+
+.hvac-space-card {
+  position: relative;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #d8ded8;
+  box-shadow: 0 24px 48px rgb(12 62 69 / 0.16);
+}
+
+.hvac-space-large {
+  grid-row: 1 / span 2;
+}
+
+.hvac-space-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hvac-space-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgb(0 0 0 / 0.66));
+}
+
+.hvac-space-card figcaption {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  left: 20px;
+  z-index: 1;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(18px, 1.25vw, 24px);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* Contact page */
@@ -3148,6 +3367,46 @@ h3,
   .partner-card p {
     font-size: 14px;
   }
+
+  .hvac-hero {
+    min-height: 620px;
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  .hvac-intro {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  .hvac-service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .hvac-service-card {
+    padding: 30px 24px 28px;
+  }
+
+  .hvac-service-number {
+    margin-bottom: 44px;
+    font-size: 42px;
+  }
+
+  .hvac-spaces {
+    grid-template-columns: 1fr;
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  .hvac-spaces-copy h2,
+  .hvac-spaces-copy p:not(.eyebrow) {
+    max-width: 720px;
+  }
+
+  .hvac-space-gallery {
+    min-height: 500px;
+  }
 }
 
 @media (max-width: 799px) {
@@ -3248,6 +3507,78 @@ h3,
 
   .hvac-brand.mitsubishi {
     font-size: 10px;
+  }
+
+  .hvac-hero {
+    min-height: 650px;
+    padding: 190px 32px 64px;
+    background-position: 58% 50%;
+  }
+
+  .hvac-hero::after {
+    right: -260px;
+    bottom: -250px;
+  }
+
+  .hvac-hero-copy {
+    margin-top: 36px;
+  }
+
+  .hvac-hero-copy h1 {
+    font-size: clamp(46px, 13vw, 62px);
+  }
+
+  .hvac-hero-copy p:not(.eyebrow) {
+    font-size: 17px;
+  }
+
+  .hvac-intro {
+    padding: 58px 32px 62px;
+  }
+
+  .hvac-service-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .hvac-service-card {
+    min-height: 250px;
+    padding: 28px 24px 26px;
+    border-radius: 14px;
+  }
+
+  .hvac-service-number {
+    margin-bottom: 34px;
+    font-size: 38px;
+  }
+
+  .hvac-spaces {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 58px 32px;
+  }
+
+  .hvac-spaces-copy h2 {
+    font-size: 38px;
+  }
+
+  .hvac-spaces-copy p:not(.eyebrow) {
+    font-size: 16px;
+  }
+
+  .hvac-space-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 18px;
+    min-height: 0;
+  }
+
+  .hvac-space-large {
+    grid-row: auto;
+  }
+
+  .hvac-space-card {
+    min-height: 260px;
   }
 
   .services-footer {
@@ -4043,5 +4374,356 @@ h3,
 
   .youtube::before {
     width: 34px;
+  }
+}
+
+/* HVAC page refinements from the published Figma reference */
+.hvac-page .hvac-hero {
+  min-height: 676px;
+  padding: 118px clamp(20px, 7.8vw, 100px) 100px;
+  background: #192224;
+}
+
+.hvac-page .hvac-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
+    var(--hvac-hero-slide-1) center / cover;
+  animation: hvac-hero-slideshow 24s infinite;
+}
+
+.hvac-page .hvac-hero::after {
+  z-index: 1;
+}
+
+.hvac-page .hvac-hero-copy {
+  max-width: 550px;
+  margin-top: 128px;
+}
+
+.hvac-page .hvac-hero-copy h1 {
+  max-width: 550px;
+  font-size: clamp(30px, 3.9vw, 50px);
+  line-height: 1.08;
+}
+
+.hvac-page .hvac-hero-copy p:not(.eyebrow) {
+  max-width: 420px;
+  margin: 20px 0 26px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.hvac-page .hvac-intro {
+  display: grid;
+  grid-template-columns: 316px minmax(0, 700px);
+  align-items: start;
+  min-height: 242px;
+  padding: 40px clamp(20px, 7.8vw, 100px);
+  background: var(--paper);
+}
+
+.hvac-intro-heading {
+  width: 223px;
+}
+
+.hvac-intro-heading h2 {
+  color: var(--teal);
+  font-size: 40px;
+  line-height: 0.92;
+}
+
+.hvac-intro-heading p {
+  margin-top: 12px;
+  color: #252525;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.hvac-page .hvac-service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 309px));
+  gap: 42px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.hvac-page .hvac-service-card {
+  min-height: 60px;
+  padding: 0;
+  border-radius: 0;
+  color: var(--ink);
+  background: transparent;
+  box-shadow: none;
+}
+
+.hvac-page .hvac-service-card::after,
+.hvac-page .hvac-service-number {
+  display: none;
+}
+
+.hvac-page .hvac-service-card h3 {
+  max-width: none;
+  color: var(--teal);
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.hvac-page .hvac-service-card p {
+  margin-top: 8px;
+  color: #333;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.hvac-page .hvac-spaces {
+  position: relative;
+  grid-template-columns: minmax(0, 450px) minmax(0, 700px);
+  gap: 30px;
+  min-height: 458px;
+  overflow: hidden;
+  padding: 0 clamp(0px, 7.8vw, 100px);
+  color: var(--white);
+  background: var(--teal);
+}
+
+.hvac-page .hvac-spaces::before {
+  content: "";
+  position: absolute;
+  top: -101px;
+  left: -277px;
+  width: 1742px;
+  height: 1051px;
+  background: url("assets/figma-reference/hvac/014f64f91d419751aa5186f309db81dad7b1d46e.png") center / contain no-repeat;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.hvac-page .hvac-spaces-copy {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+}
+
+.hvac-page .hvac-spaces-copy h2 {
+  max-width: 450px;
+  color: var(--white);
+  font-size: 40px;
+  line-height: 1.22;
+}
+
+.hvac-page .hvac-spaces-copy p:not(.eyebrow) {
+  max-width: 450px;
+  margin-top: 24px;
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.hvac-systems-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: 458px;
+  object-fit: cover;
+}
+
+.hvac-page .hvac-brand-carousel {
+  min-height: 219px;
+  background: var(--paper);
+}
+
+@media (max-width: 1279px) {
+  .hvac-page .hvac-intro {
+    grid-template-columns: 253px minmax(0, 477px);
+    min-height: 338px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .hvac-page .hvac-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 198px));
+    gap: 42px;
+  }
+
+  .hvac-page .hvac-spaces {
+    grid-template-columns: minmax(0, 375px) minmax(0, 375px);
+    padding-right: 0;
+    padding-left: 50px;
+  }
+
+  .hvac-page .hvac-spaces-copy h2,
+  .hvac-page .hvac-spaces-copy p:not(.eyebrow) {
+    max-width: 375px;
+  }
+
+  .hvac-systems-image {
+    max-width: 375px;
+  }
+}
+
+@media (max-width: 799px) {
+  .hvac-page .navbar {
+    left: 20px;
+    right: auto;
+    width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
+    height: 48px;
+    box-sizing: border-box;
+    padding: 8px 14px;
+    gap: 0;
+    justify-content: space-between;
+    overflow: hidden;
+    transform: none;
+  }
+
+  .hvac-page .brand,
+  .hvac-page .brand img {
+    width: 132px;
+    height: 31px;
+  }
+
+  .hvac-page .hamburger {
+    display: flex;
+  }
+
+  .hvac-page .nav-menu {
+    display: none;
+  }
+
+  .hvac-page .nav-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+
+  .hvac-page .hvac-hero {
+    min-height: 676px;
+    padding: 118px 20px 100px;
+  }
+
+  .hvac-page .hvac-hero-copy {
+    max-width: 335px;
+    margin-top: 276px;
+  }
+
+  .hvac-page .hvac-hero-copy h1 {
+    font-size: 30px;
+  }
+
+  .hvac-page .hvac-hero-copy p:not(.eyebrow) {
+    max-width: 335px;
+    font-size: 15px;
+  }
+
+  .hvac-page .hvac-intro {
+    grid-template-columns: 1fr;
+    min-height: 420px;
+    padding: 40px 20px;
+  }
+
+  .hvac-intro-heading {
+    width: 335px;
+  }
+
+  .hvac-intro-heading h2 {
+    font-size: 40px;
+    line-height: 0.92;
+  }
+
+  .hvac-intro-heading p {
+    font-size: 15px;
+  }
+
+  .hvac-page .hvac-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 126px));
+    gap: 42px 43px;
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+
+  .hvac-page .hvac-service-card {
+    min-height: 84px;
+  }
+
+  .hvac-page .hvac-service-card h3 {
+    font-size: 14px;
+  }
+
+  .hvac-page .hvac-service-card p {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .hvac-page .hvac-spaces {
+    grid-template-columns: 178px 178px;
+    gap: 19px;
+    min-height: 216px;
+    padding: 0 0 0 20px;
+  }
+
+  .hvac-page .hvac-spaces::before {
+    top: -101px;
+    left: -729px;
+  }
+
+  .hvac-page .hvac-spaces-copy h2 {
+    max-width: 178px;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .hvac-page .hvac-spaces-copy p:not(.eyebrow) {
+    max-width: 178px;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .hvac-systems-image {
+    width: 178px;
+    height: 216px;
+  }
+
+  .hvac-page .hvac-brand-carousel {
+    min-height: 91px;
+  }
+}
+
+@keyframes hvac-hero-slideshow {
+  0%,
+  20% {
+    background:
+      linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
+      var(--hvac-hero-slide-1) center / cover;
+  }
+
+  25%,
+  45% {
+    background:
+      linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
+      var(--hvac-hero-slide-2) center / cover;
+  }
+
+  50%,
+  70% {
+    background:
+      linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
+      var(--hvac-hero-slide-3) center / cover;
+  }
+
+  75%,
+  95% {
+    background:
+      linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
+      var(--hvac-hero-slide-4) center / cover;
+  }
+
+  100% {
+    background:
+      linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
+      var(--hvac-hero-slide-1) center / cover;
   }
 }

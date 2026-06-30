@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AvanTech solar, HVAC, and security systems." />
-    <title>Services | AvanTech</title>
+    <meta name="description" content="AvanTech HVAC solutions for residential, commercial, and industrial comfort systems." />
+    <title>HVAC Solutions | AvanTech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="page-shell services-page">
-      <section class="services-showcase-hero">
+    <main class="page-shell hvac-page">
+      <section class="hvac-hero" aria-labelledby="hvac-hero-title">
         <nav class="navbar" aria-label="Primary navigation">
           <a class="brand" href="index.html" aria-label="AvanTech home">
             <img src="assets/brand/avantech-horizontal-white.png" alt="AvanTech Integrated Technology Solutions, Inc." />
@@ -34,31 +34,45 @@
           </div>
         </nav>
 
-        <div class="services-showcase-copy">
-          <h1>Integrated Systems.<br />Premium Quality.<br />Built to Perform.</h1>
-          <p>Carefully selected products from trusted global brands.<br />Engineered for efficiency, reliability, and long-term value.</p>
+        <a class="back-link" href="services.html">&lsaquo; Back to Services</a>
+        <div class="hvac-hero-copy">
+          <h1 id="hvac-hero-title">Comfort, efficiency, reliability.</h1>
+          <p>We deliver high-quality HVAC systems and services for residential, commercial, and industrial spaces. Designed for performance, built for comfort.</p>
+          <a class="button" href="quote.html">Get a Free Quote <span aria-hidden="true">&rsaquo;</span></a>
         </div>
       </section>
 
-      <section class="service-cards-section" aria-label="AvanTech services">
-        <article class="service-card" id="solar">
-          <div class="service-card-media card-solar" role="img" aria-label="Solar panel field"><span>Solar image</span></div>
-          <h2>Solar Solutions</h2>
-          <p>High-performance solar panels, inverters, batteries, and complete balance of system for residential, commercial, and industrial applications.</p>
-          <a href="solar-solutions.html">Explore Solar Solutions <span aria-hidden="true">›</span></a>
-        </article>
-        <article class="service-card" id="hvac">
-          <div class="service-card-media card-hvac" role="img" aria-label="HVAC ductwork system"><span>HVAC image</span></div>
-          <h2>HVAC Solutions</h2>
-          <p>Energy-efficient heating, ventilation, and air conditioning systems designed for comfort, durability, and optimal performance.</p>
-          <a href="hvac-solutions.html">Explore HVAC Solutions <span aria-hidden="true">›</span></a>
-        </article>
-        <article class="service-card" id="security">
-          <div class="service-card-media card-security" role="img" aria-label="Security camera on a building"><span>Security image</span></div>
-          <h2>Security Systems</h2>
-          <p>Advanced security systems including CCTV, access control, intrusion detection, and integrated monitoring solutions for complete peace of mind.</p>
-          <a href="contact.html">Explore Security Systems <span aria-hidden="true">›</span></a>
-        </article>
+      <section class="hvac-intro" aria-labelledby="hvac-intro-title">
+        <div class="hvac-intro-heading">
+          <h2 id="hvac-intro-title">Our HVAC<br />Services</h2>
+          <p>This is what we do.</p>
+        </div>
+        <div class="hvac-service-grid">
+          <article class="hvac-service-card">
+            <h3>Installation &amp; Supply</h3>
+            <p>Supply and installation of quality HVAC systems tailored to your needs.</p>
+          </article>
+          <article class="hvac-service-card">
+            <h3>Preventive Maintenance</h3>
+            <p>Regular maintenance ensures optimal performance and extends system life.</p>
+          </article>
+          <article class="hvac-service-card">
+            <h3>Ventilation &amp; Ducting</h3>
+            <p>Custom ducting and ventilation systems for better air quality and efficiency.</p>
+          </article>
+          <article class="hvac-service-card">
+            <h3>Repairs &amp; Troubleshooting</h3>
+            <p>Fast diagnosis and reliable repair services to restore comfort and system performance.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="hvac-spaces" aria-labelledby="hvac-spaces-title">
+        <div class="hvac-spaces-copy">
+          <h2 id="hvac-spaces-title">Engineered Systems for Every Space</h2>
+          <p>From commercial buildings to industrial facilities, we design and implement HVAC solutions that deliver consistent comfort and efficiency.</p>
+        </div>
+        <img class="hvac-systems-image" src="assets/figma-reference/hvac/6d635408efec5b3e19a256b4ff9f14ecd7f69722.png" alt="Outdoor HVAC units installed on a commercial rooftop." />
       </section>
 
       <section class="hvac-brand-carousel" aria-label="HVAC brand partners">
@@ -104,7 +118,7 @@
             <a class="footer-link" href="about.html"><span class="footer-link-text">About Us</span><span class="footer-arrow" aria-hidden="true"></span></a>
             <a class="footer-link" href="solar-solutions.html"><span class="footer-link-text">Services (Solar)</span><span class="footer-arrow" aria-hidden="true"></span></a>
             <a class="footer-link" href="hvac-solutions.html"><span class="footer-link-text">Services (HVAC)</span><span class="footer-arrow" aria-hidden="true"></span></a>
-            <a class="footer-link" href="#security"><span class="footer-link-text">Services (Security)</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="services.html#security"><span class="footer-link-text">Services (Security)</span><span class="footer-arrow" aria-hidden="true"></span></a>
           </div>
           <div>
             <h2 class="sr-only">More Links</h2>
@@ -134,9 +148,9 @@
         </div>
         <div class="help-copy">
           <h2>Need Help Choosing the Right Solution?</h2>
-          <p>Our experts will recommend the best products<br />tailored to your project needs and budget</p>
+          <p>Our experts will recommend the best products<br />tailored to your project needs and budget.</p>
         </div>
-        <a class="button" href="quote.html">Get a free quote today! <span aria-hidden="true">›</span></a>
+        <a class="button" href="quote.html">Get a free quote today! <span aria-hidden="true">&rsaquo;</span></a>
       </section>
     </main>
   </body>
