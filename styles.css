@@ -11,36 +11,34 @@
   --placeholder-mid: linear-gradient(135deg, #dbe7e2 0%, #b9cec9 48%, #eff2ec 100%);
   --placeholder-dark: linear-gradient(135deg, #0c3e45 0%, #13616b 50%, #e9eee8 100%);
   --hero-image: url("assets/figma-reference/hero-city.png");
-  --services-hero-image: url("assets/figma-reference/services/f02e807d210d67f17eff3d73cbdae36ccee0dae0.png");
+  --services-hero-image: url("assets/figma-reference/services/services-hero.png");
   --building-image: url("assets/figma-reference/about-solar-city.png");
   --office-image: url("assets/photos/solar/avantech-solar-panel-construction.png");
   --install-image: url("assets/figma-reference/about-panel-tech.png");
   --cta-image: url("assets/figma-reference/cta-solar-panels.png");
   --solar-image: url("assets/photos/solar/commercial-rooftop-solar.jpg");
-  --hvac-image: url("assets/photos/hvac/industrial-rooftop-hvac.jpg");
+  --hvac-image: url("assets/figma-reference/hvac/commercial-rooftop-hvac-units.jpg");
   --hvac-hero-slide-1: url("assets/photos/hvac/hero/hvac-ductwork-ceiling.jpg");
   --hvac-hero-slide-2: url("assets/photos/hvac/hero/hvac-rooftop-ventilation-tokyo.jpg");
-  --hvac-hero-slide-3: url("assets/photos/hvac/hero/hvac-mezzanine-ductwork.jpg");
-  --hvac-hero-slide-4: url("assets/photos/hvac/hero/hvac-rooftop-ac-units.jpg");
   --security-image: url("assets/generated/security-control-room.png");
-  --services-card-solar-image: url("assets/figma-reference/services/c00156bd167b17c0bc4151c58cd50007ccac15c8.png");
-  --services-card-hvac-image: url("assets/figma-reference/services/b3b5ac46bb477edd9bd6b0671d693ac3db5e8f94.png");
-  --services-card-security-image: url("assets/figma-reference/services/d81bbd152b1e0b2fd12ce932c69ffa7a63ccc8f6.png");
-  --partner-hero-image: url("assets/figma-reference/partner/61ce4e546e76c98f926943a6993170df1b66c970.png");
-  --partner-design-image: url("assets/figma-reference/partner/4effc1ecec1027f209f397a79339b46f2e8afcb2.png");
-  --partner-install-image: url("assets/figma-reference/partner/559cf63a6a6c60a0c5820674a18ac9c6337ccc4c.png");
-  --partner-distributor-image: url("assets/figma-reference/partner/39327dbbe9a8af0feff31487dbba3915595f080c.png");
-  --partner-corporate-image: url("assets/figma-reference/partner/064a1d8419bcce99c580928f1c7d353aeb397f65.png");
-  --partner-support-image: url("assets/figma-reference/partner/0f85a34032bc8f5ab2c583568ea2fc82ecea0207.png");
-  --partner-empowering-image: url("assets/figma-reference/partner/7327a2500e5fcc819d0ba719468fb9830dfe6921.png");
+  --services-card-solar-image: url("assets/figma-reference/services/solar-service-card.jpg");
+  --services-card-hvac-image: url("assets/figma-reference/services/hvac-service-card.jpg");
+  --services-card-security-image: url("assets/figma-reference/services/security-service-card.jpg");
+  --partner-hero-image: url("assets/figma-reference/partner/partner-hero.jpg");
+  --partner-design-image: url("assets/figma-reference/partner/design-consultation.png");
+  --partner-install-image: url("assets/figma-reference/partner/installation-team.png");
+  --partner-distributor-image: url("assets/figma-reference/partner/distributor-warehouse.png");
+  --partner-corporate-image: url("assets/figma-reference/partner/corporate-project.jpg");
+  --partner-support-image: url("assets/figma-reference/partner/support-service.png");
+  --partner-empowering-image: url("assets/figma-reference/partner/empowering-business.jpg");
   --inverter-image: url("assets/generated/solar-inverter-wall.png");
   --business-image: url("assets/photos/buildings/blue-business-towers.jpg");
   --support-image: url("assets/generated/smart-building-control.png");
   --contact-hero-image: url("assets/photos/contact/contact-keyboard-wide.jpg");
   --about-hero-image: url("assets/figma-reference/about-hero-solar-field.png");
-  --about-who-image: url("assets/figma-reference/about-desk.png");
+  --about-who-image: url("assets/photos/hvac/wall-mounted-split-air-conditioner.jpg");
   --about-mission-image: url("assets/figma-reference/about-mission-tech.png");
-  --about-vision-image: url("assets/figma-reference/about-vision-wind.png");
+  --about-vision-image: url("assets/photos/security/three-surveillance-cameras-building.jpg");
   --quote-hero-image: url("assets/photos/solar/solar-field-clouds.jpg");
 }
 
@@ -763,8 +761,8 @@ h3,
   width: min(66vw, 990px);
   min-height: 0;
   background:
-    linear-gradient(90deg, var(--paper) 0%, rgb(245 245 240 / 0.96) 12%, rgb(245 245 240 / 0.78) 24%, rgb(245 245 240 / 0.42) 38%, rgb(245 245 240 / 0.12) 50%, rgb(245 245 240 / 0) 62%, rgb(245 245 240 / 0.3) 91%, var(--paper) 100%),
-    var(--about-who-image) center right / cover no-repeat;
+    linear-gradient(90deg, var(--paper) 0%, rgb(245 245 240 / 0.88) 16%, rgb(245 245 240 / 0.42) 32%, rgb(245 245 240 / 0.04) 48%, rgb(245 245 240 / 0) 100%),
+    var(--about-who-image) center / cover no-repeat;
   pointer-events: none;
 }
 
@@ -775,6 +773,7 @@ h3,
 
 .vision-image {
   background:
+    linear-gradient(90deg, rgb(12 62 69 / 0.14), rgb(12 62 69 / 0)),
     var(--about-vision-image) center / cover;
 }
 
@@ -1233,13 +1232,31 @@ h3,
   box-shadow: 0 8px 20px rgb(12 62 69 / 0.14);
 }
 
+.service-card-disabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 42px;
+  margin-top: 14px;
+  padding: 10px 18px;
+  border: 1px solid rgb(12 62 69 / 0.12);
+  border-radius: 999px;
+  color: rgb(12 62 69 / 0.48);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  background: rgb(12 62 69 / 0.06);
+  cursor: not-allowed;
+}
+
 .service-card > a span {
   font-size: 22px;
   line-height: 1;
 }
 
 .hvac-brand-carousel {
-  --hvac-brand-distance: 3136px;
+  --hvac-brand-distance: 3194px;
   display: flex;
   min-height: 154px;
   align-items: center;
@@ -1290,13 +1307,15 @@ h3,
   text-transform: none;
 }
 
-.hvac-brand.mitsubishi {
+.hvac-brand.mitsubishi,
+.hvac-brand.condura {
   width: 260px;
   font-size: 14px;
   line-height: 1.15;
 }
 
-.hvac-brand.mitsubishi img {
+.hvac-brand.mitsubishi img,
+.hvac-brand.condura img {
   max-width: 220px;
 }
 
@@ -1382,11 +1401,29 @@ h3,
   position: relative;
   z-index: 1;
   display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 8px;
   margin-top: 18px;
+  padding: 0 18px;
+  border: 1px solid rgb(255 255 255 / 0.58);
+  border-radius: 999px;
   color: var(--white);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.1;
+  background: rgb(4 54 60 / 0.38);
+  box-shadow: 0 12px 26px rgb(0 0 0 / 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  border-color: rgb(255 255 255 / 0.9);
+  background: rgb(4 54 60 / 0.58);
+  transform: translateY(-1px);
 }
 
 .solar-hero-copy {
@@ -1524,7 +1561,9 @@ h3,
   padding: clamp(42px, 5.8vw, 92px) clamp(48px, 5.86vw, 120px);
   overflow: hidden;
   color: var(--white);
-  background: var(--teal);
+  background:
+    radial-gradient(circle at 35% 31%, rgb(34 125 133 / 0.72) 0 18%, rgb(18 91 99 / 0.5) 36%, rgb(7 65 72 / 0) 58%),
+    linear-gradient(180deg, #247980 0%, #0c555d 45%, #073f46 100%);
 }
 
 .solar-install-types::before,
@@ -1573,6 +1612,7 @@ h3,
   max-width: 480px;
   margin: 18px 0 0;
   font-size: clamp(18px, 1.35vw, 26px);
+  font-weight: 400;
   line-height: 1.22;
 }
 
@@ -1609,7 +1649,7 @@ h3,
   padding: 12px 18px;
   color: var(--white);
   font-size: clamp(18px, 1.28vw, 26px);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2;
   text-align: center;
   background: rgb(4 54 60 / 0.96);
@@ -1648,7 +1688,7 @@ h3,
   color: var(--white);
   background:
     linear-gradient(90deg, rgb(0 0 0 / 0.68), rgb(0 0 0 / 0.38) 50%, rgb(0 0 0 / 0.08)),
-    url("assets/figma-reference/hvac/6d635408efec5b3e19a256b4ff9f14ecd7f69722.png") center / cover;
+    url("assets/figma-reference/hvac/commercial-rooftop-hvac-units.jpg") center / cover;
 }
 
 .hvac-hero::after {
@@ -2793,6 +2833,19 @@ h3,
   text-decoration: underline;
 }
 
+.footer .footer-link-disabled {
+  color: rgb(255 255 255 / 0.52);
+  cursor: not-allowed;
+}
+
+.footer .footer-link-disabled .footer-arrow {
+  opacity: 0.42;
+}
+
+.footer .footer-link-disabled:hover {
+  text-decoration: none;
+}
+
 .contact-line {
   display: flex;
   gap: 8px;
@@ -3179,7 +3232,7 @@ h3,
   }
 
   .hvac-brand-carousel {
-    --hvac-brand-distance: 2520px;
+    --hvac-brand-distance: 2578px;
     min-height: 132px;
   }
 
@@ -3287,8 +3340,8 @@ h3,
     display: block;
     width: min(54vw, 660px);
     background:
-      linear-gradient(90deg, var(--paper) 0%, rgb(245 245 240 / 0.98) 16%, rgb(245 245 240 / 0.82) 34%, rgb(245 245 240 / 0.42) 54%, rgb(245 245 240 / 0) 74%),
-      var(--about-who-image) center right / cover no-repeat;
+      linear-gradient(90deg, var(--paper) 0%, rgb(245 245 240 / 0.86) 20%, rgb(245 245 240 / 0.34) 40%, rgb(245 245 240 / 0.03) 58%, rgb(245 245 240 / 0) 100%),
+      var(--about-who-image) center / cover no-repeat;
   }
 
   .legacy-section {
@@ -3488,7 +3541,7 @@ h3,
   }
 
   .hvac-brand-carousel {
-    --hvac-brand-distance: 1960px;
+    --hvac-brand-distance: 2018px;
     min-height: 104px;
   }
 
@@ -3858,7 +3911,9 @@ h3,
 
   .back-link {
     margin-top: 0;
-    font-size: 12px;
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 15px;
   }
 
   .solar-hero-copy {
@@ -4121,8 +4176,8 @@ h3,
   }
 
   .who-section {
-    min-height: clamp(500px, 104vw, 690px);
-    padding: 58px 28px 68px;
+    min-height: 0;
+    padding: 54px 28px 46px;
   }
 
   .who-copy {
@@ -4144,11 +4199,11 @@ h3,
     position: absolute;
     inset: 0 0 0 auto;
     width: min(82vw, 760px);
-    height: auto;
+    height: 100%;
     margin: 0;
     background:
-      linear-gradient(90deg, var(--paper) 0%, rgb(245 245 240 / 1) 30%, rgb(245 245 240 / 0.96) 52%, rgb(245 245 240 / 0.78) 68%, rgb(245 245 240 / 0.42) 84%, rgb(245 245 240 / 0) 100%),
-      var(--about-who-image) center right / cover no-repeat;
+      linear-gradient(90deg, var(--paper) 0%, rgb(245 245 240 / 0.9) 38%, rgb(245 245 240 / 0.46) 62%, rgb(245 245 240 / 0.08) 82%, rgb(245 245 240 / 0) 100%),
+      var(--about-who-image) center / cover no-repeat;
   }
 
   .legacy-section {
@@ -4391,7 +4446,7 @@ h3,
   background:
     linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
     var(--hvac-hero-slide-1) center / cover;
-  animation: hvac-hero-slideshow 24s infinite;
+  animation: hvac-hero-slideshow 14s infinite;
 }
 
 .hvac-page .hvac-hero::after {
@@ -4480,13 +4535,16 @@ h3,
 
 .hvac-page .hvac-spaces {
   position: relative;
-  grid-template-columns: minmax(0, 450px) minmax(0, 700px);
-  gap: 30px;
-  min-height: 458px;
+  grid-template-columns: 59.1% 40.9%;
+  gap: 0;
+  align-items: stretch;
+  min-height: clamp(360px, 26.85vw, 550px);
   overflow: hidden;
-  padding: 0 clamp(0px, 7.8vw, 100px);
+  padding: 0;
   color: var(--white);
-  background: var(--teal);
+  background:
+    radial-gradient(circle at 43% 37%, rgb(24 113 124 / 0.72) 0 18%, rgb(15 81 89 / 0.54) 36%, rgb(7 65 72 / 0) 58%),
+    linear-gradient(180deg, #247980 0%, #0c555d 44%, #073f46 100%);
 }
 
 .hvac-page .hvac-spaces::before {
@@ -4496,7 +4554,7 @@ h3,
   left: -277px;
   width: 1742px;
   height: 1051px;
-  background: url("assets/figma-reference/hvac/014f64f91d419751aa5186f309db81dad7b1d46e.png") center / contain no-repeat;
+  background: url("assets/figma-reference/hvac/hvac-gradient-wave-pattern.png") center / contain no-repeat;
   opacity: 0.22;
   pointer-events: none;
 }
@@ -4505,21 +4563,28 @@ h3,
   position: relative;
   z-index: 1;
   align-self: center;
+  padding: 0 clamp(60px, 5.9vw, 120px);
 }
 
 .hvac-page .hvac-spaces-copy h2 {
-  max-width: 450px;
+  max-width: 520px;
   color: var(--white);
-  font-size: 40px;
-  line-height: 1.22;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(40px, 2.35vw, 48px);
+  font-weight: 600;
+  line-height: 1.23;
+  letter-spacing: 0;
 }
 
 .hvac-page .hvac-spaces-copy p:not(.eyebrow) {
-  max-width: 450px;
-  margin-top: 24px;
+  max-width: 560px;
+  margin-top: clamp(26px, 2.15vw, 44px);
   color: var(--white);
-  font-size: 20px;
-  line-height: 1.2;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(20px, 1.37vw, 28px);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0;
 }
 
 .hvac-systems-image {
@@ -4527,8 +4592,9 @@ h3,
   z-index: 1;
   display: block;
   width: 100%;
-  max-width: 700px;
-  height: 458px;
+  max-width: none;
+  height: 100%;
+  min-height: clamp(360px, 26.85vw, 550px);
   object-fit: cover;
 }
 
@@ -4551,18 +4617,17 @@ h3,
   }
 
   .hvac-page .hvac-spaces {
-    grid-template-columns: minmax(0, 375px) minmax(0, 375px);
+    grid-template-columns: minmax(0, 59.1%) minmax(0, 40.9%);
     padding-right: 0;
-    padding-left: 50px;
+    padding-left: 0;
   }
 
-  .hvac-page .hvac-spaces-copy h2,
-  .hvac-page .hvac-spaces-copy p:not(.eyebrow) {
-    max-width: 375px;
+  .hvac-page .hvac-spaces-copy {
+    padding: 0 50px;
   }
 
   .hvac-systems-image {
-    max-width: 375px;
+    max-width: none;
   }
 }
 
@@ -4658,15 +4723,19 @@ h3,
   }
 
   .hvac-page .hvac-spaces {
-    grid-template-columns: 178px 178px;
-    gap: 19px;
+    grid-template-columns: minmax(0, 59.1%) minmax(0, 40.9%);
+    gap: 0;
     min-height: 216px;
-    padding: 0 0 0 20px;
+    padding: 0;
   }
 
   .hvac-page .hvac-spaces::before {
     top: -101px;
     left: -729px;
+  }
+
+  .hvac-page .hvac-spaces-copy {
+    padding: 0 20px;
   }
 
   .hvac-page .hvac-spaces-copy h2 {
@@ -4683,8 +4752,9 @@ h3,
   }
 
   .hvac-systems-image {
-    width: 178px;
+    width: 100%;
     height: 216px;
+    min-height: 216px;
   }
 
   .hvac-page .hvac-brand-carousel {
@@ -4694,31 +4764,17 @@ h3,
 
 @keyframes hvac-hero-slideshow {
   0%,
-  20% {
+  42% {
     background:
       linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
       var(--hvac-hero-slide-1) center / cover;
   }
 
-  25%,
-  45% {
+  50%,
+  92% {
     background:
       linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
       var(--hvac-hero-slide-2) center / cover;
-  }
-
-  50%,
-  70% {
-    background:
-      linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
-      var(--hvac-hero-slide-3) center / cover;
-  }
-
-  75%,
-  95% {
-    background:
-      linear-gradient(90deg, rgb(0 0 0 / 0.56), rgb(0 0 0 / 0.28) 55%, rgb(0 0 0 / 0.04)),
-      var(--hvac-hero-slide-4) center / cover;
   }
 
   100% {
