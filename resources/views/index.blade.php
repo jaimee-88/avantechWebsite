@@ -1,0 +1,180 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AvanTech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ asset('styles.css') }}" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" id="home">
+        <nav class="navbar" aria-label="Primary navigation">
+          <a class="brand" href="#home" aria-label="AvanTech home">
+            <img src="{{ asset('assets/brand/avantech-horizontal-white.png') }}" alt="AvanTech Integrated Technology Solutions, Inc." />
+          </a>
+          <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu" />
+          <label class="hamburger" for="nav-toggle" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <div class="nav-menu" id="primary-menu">
+            <div class="nav-links nav-center">
+              <a class="active" href="#home" aria-current="page">Home</a>
+              <a href="{{ route('about') }}">About Us</a>
+              <a href="{{ route('services') }}">Services</a>
+            </div>
+            <div class="nav-links nav-right">
+              <a href="{{ route('partner') }}">Partner With Us</a>
+              <span class="nav-disabled" aria-disabled="true">FAQs</span>
+              <a href="{{ route('contact') }}">Contact Us</a>
+              <a class="contact-pill" href="{{ route('quote') }}">Free Quote</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="hero-content">
+          <h1>Built to Advance<br />Modern Living</h1>
+          <p>Empowering spaces with innovative<br />Solar, HVAC, and Security Solutions.</p>
+          <a class="button" href="{{ route('quote') }}">Get a Free Quote <span aria-hidden="true">&rsaquo;</span></a>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about-copy">
+          <h2>Integrated Technology.<br />Enhancing Tomorrow.</h2>
+          <p>
+            AvanTech is a leading provider of integrated technology solutions in the Philippines.
+          </p>
+          <p>
+            We specialize in solar, HVAC, and security systems designed to create smarter, safer,
+            and more sustainable environments for homes and businesses.
+          </p>
+          <a class="button" href="{{ route('about') }}">Learn More About Us <span aria-hidden="true">&rsaquo;</span></a>
+        </div>
+
+        <div class="photo-grid" aria-label="AvanTech project imagery">
+          <div class="photo photo-large"></div>
+          <div class="photo photo-office"></div>
+          <div class="photo photo-install"></div>
+        </div>
+      </section>
+
+      <section class="journey" id="services">
+        <div class="wave wave-left"></div>
+        <div class="wave wave-right"></div>
+        <p class="eyebrow">OUR JOURNEY</p>
+        <h2>A Future of Impact.</h2>
+        <div class="timeline">
+          <article>
+            <span class="year">2023</span>
+            <h3>Founded</h3>
+            <p>AvanTech began with a mission to make reliable solar, HVAC, and security solutions more accessible for homes, businesses, and growing communities.</p>
+          </article>
+          <article>
+            <span class="year">2024</span>
+            <h3>Expanded</h3>
+            <p>We strengthened our partnerships and service capabilities, helping more clients reduce energy costs while improving comfort, safety, and operational efficiency.</p>
+          </article>
+          <article>
+            <span class="year">2025+</span>
+            <h3>Advancing</h3>
+            <p>We continue building integrated technology solutions that support cleaner power, smarter spaces, and long-term value for every project we take on.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="partners" aria-label="Partnered products">
+        <div class="partner-track">
+          <span><img src="{{ asset('assets/partners/luxpowertek.png') }}" alt="LuxPower" /></span>
+          <span><img src="{{ asset('assets/partners/solax.png') }}" alt="SolaX Power" /></span>
+          <span><img class="partner-logo-wide" src="{{ asset('assets/partners/goodwe.svg') }}" alt="GoodWe" /></span>
+          <span><img src="{{ asset('assets/partners/deye.png') }}" alt="Deye" /></span>
+          <span><img class="partner-logo-wide" src="{{ asset('assets/partners/sungrow.svg') }}" alt="Sungrow" /></span>
+          <span><img src="{{ asset('assets/partners/solis.png') }}" alt="Solis" /></span>
+          <span><img src="{{ asset('assets/partners/luxpowertek.png') }}" alt="" /></span>
+          <span><img src="{{ asset('assets/partners/solax.png') }}" alt="" /></span>
+          <span><img class="partner-logo-wide" src="{{ asset('assets/partners/goodwe.svg') }}" alt="" /></span>
+          <span><img src="{{ asset('assets/partners/deye.png') }}" alt="" /></span>
+          <span><img class="partner-logo-wide" src="{{ asset('assets/partners/sungrow.svg') }}" alt="" /></span>
+          <span><img src="{{ asset('assets/partners/solis.png') }}" alt="" /></span>
+        </div>
+      </section>
+
+      <section class="cta" id="partner">
+        <p class="eyebrow">LET'S BUILD A BETTER TOMORROW</p>
+        <h2>Let's Build Smarter, Safer,<br />More Sustainable Spaces Together.</h2>
+        <p>Partner with AvanTech for integrated solutions that power progress and protect what matters.</p>
+        <a class="button" href="{{ route('partner') }}">Partner With Us <span aria-hidden="true">&rsaquo;</span></a>
+      </section>
+
+      <footer class="footer home-footer" id="contact">
+        <div class="footer-wave footer-wave-left"></div>
+        <div class="footer-wave footer-wave-right"></div>
+        <section class="footer-solutions" aria-label="Complete integrated solutions">
+          <h2>Complete Integrated Solutions</h2>
+          <div class="footer-solutions-grid">
+            <article>
+              <h3>Solar Solutions</h3>
+              <p>High-performance solar panels, inverters, and systems for residential, commercial, and industrial applications.</p>
+              <a href="{{ route('solar-solutions') }}">View More <span aria-hidden="true">&rsaquo;</span></a>
+            </article>
+            <article>
+              <h3>HVAC Solutions</h3>
+              <p>Energy-efficient heating, ventilation, and air conditioning systems tailored for comfort, quality, and optimal performance.</p>
+              <a href="{{ route('hvac-solutions') }}">View More <span aria-hidden="true">&rsaquo;</span></a>
+            </article>
+            <article>
+              <h3>Security Solutions</h3>
+              <p>Advanced security systems including CCTV, access control, alarm systems, and integrated monitoring solutions.</p>
+              <span class="service-card-disabled" aria-disabled="true">View More <span aria-hidden="true">&rsaquo;</span></span>
+            </article>
+          </div>
+        </section>
+        <div class="footer-inner">
+          <div>
+            <h2>Quick Links</h2>
+            <a class="footer-link" href="#home"><span class="footer-link-text">Home</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="{{ route('about') }}"><span class="footer-link-text">About Us</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="{{ route('solar-solutions') }}"><span class="footer-link-text">Services (Solar)</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="{{ route('hvac-solutions') }}"><span class="footer-link-text">Services (HVAC)</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <span class="footer-link footer-link-disabled" aria-disabled="true"><span class="footer-link-text">Services (Security)</span><span class="footer-arrow" aria-hidden="true"></span></span>
+          </div>
+          <div>
+            <h2 class="sr-only">More Links</h2>
+            <a class="footer-link" href="{{ route('services') }}"><span class="footer-link-text">Services Dashboard</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="{{ route('partner') }}"><span class="footer-link-text">Partner With Us</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="#faqs"><span class="footer-link-text">FAQs</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="{{ route('contact') }}"><span class="footer-link-text">Contact Us</span><span class="footer-arrow" aria-hidden="true"></span></a>
+            <a class="footer-link" href="{{ route('quote') }}"><span class="footer-link-text">Get a Free Quote</span><span class="footer-arrow" aria-hidden="true"></span></a>
+          </div>
+          <div>
+            <h2>Contacts</h2>
+            <p class="contact-line">
+              <img class="contact-icon mail-icon" src="{{ asset('assets/icons/contact/email-envelope.svg') }}" alt="" aria-hidden="true" />
+              <span>sales.avantech@gmail.com</span>
+            </p>
+            <p class="contact-line">
+              <img class="contact-icon location-icon" src="{{ asset('assets/icons/contact/map-pin.svg') }}" alt="" aria-hidden="true" />
+              <span>Unit 305, Madrigal Business Park, Prime Street, New Alabang Village, Muntinlupa, Metro Manila</span>
+            </p>
+            <h3>Social Media</h3>
+            <div class="socials" aria-label="Social media links">
+              <a class="social facebook" href="https://www.facebook.com/AvantechIntegrated/" aria-label="Facebook"></a>
+              <a class="social tiktok" href="https://www.tiktok.com/@avantechphilippin" aria-label="TikTok"></a>
+              <a class="social youtube" href="https://www.youtube.com/@avantechintegratedtechnologyso" aria-label="YouTube"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
+
